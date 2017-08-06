@@ -1,5 +1,5 @@
 # Summary
 
 * [0. Introduction](README.md)
-* [Before your start](before-your-start.md)
+* [在开始之前的准备](before-your-start.md)
 
