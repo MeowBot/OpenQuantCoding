@@ -8,9 +8,7 @@
 
 安装OpenQuant软件时，OpenQuant安装程序会自动检测是否有合适的.NET Framework基础软件，如果需要安装程序会自动进行升级安装。
 
-
-
-![](/assets/icon_pawprint.png) 结论：建议采用Windows Server 2012以上的面向服务器的操作系统软件。
+![](/assets/icon_pawprint.png) 建议采用Windows Server 2012以上的面向服务器的操作系统软件。
 
 # 下载OpenQuant软件及插件
 
