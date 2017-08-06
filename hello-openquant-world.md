@@ -24,15 +24,127 @@ Backtest目录中的
 
 MyStrategy目录中的
 
--**MyStrategy.cs** -----------------------    
-
-
+-**MyStrategy.cs** -----------------------
 
 ## OpenQuant的解决方案中代码的运行关系
 
 这是一个标准的微软C\#解决方案，在这个_myFirstStrategy_解决方案（Solution）中有两个项目（Project）：Backtest，MyStrategy，Backtest项目是默认的启动项目。代码关系如下图的所示：
 
-![](/assets/myFirstStrategyCodeMap.png)为了掌握OpenQuant解决方案代码运行中的调用关系，我们在该项目文件中增加输出信息，使得程序运行时，可以呈现代码运行顺序和调用关系。
+![](/assets/myFirstStrategyCodeMap.png)
+
+![](/icons/icon_labtubeBlue.ico)为了掌握OpenQuant解决方案代码运行中的调用关系，我们在该项目文件中增加输出信息，使得程序运行时，可以呈现代码运行顺序和调用关系。
+
+在**Program.cs **中添加代码：
+
+```
+using System;
+
+using SmartQuant;
+
+namespace OpenQuant
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+                       System.Console.WriteLine("Program.cs程序主入口： Main()");
+			
+			System.Console.WriteLine("Program.cs程序主入口中, 实例化MyScenario()");
+                       Scenario scenario = new MyScenario(Framework.Current);
+			
+                       System.Console.WriteLine("Program.cs程序主入口中, 运行Run()");
+			scenario.Run();
+		}
+	}
+}
+
+```
+
+在**MyScenario.cs **中添加代码：
+
+```
+using System;
+
+using SmartQuant;
+
+namespace OpenQuant
+{
+    public partial class MyScenario : Scenario
+    {
+        public MyScenario(Framework framework)
+            : base(framework)
+        {
+            System.Console.WriteLine("MyScenario.cs 我的场景开始定义");
+        }
+
+        public override void Run()
+        {
+            strategy = new MyStrategy(framework, "Backtest");
+            System.Console.WriteLine("MyScenario.cs 我的场景MyScenario.Run()中, 实例化我的策略 new MyStrategy() ");
+			
+	    System.Console.WriteLine("MyScenario.cs 我的场景MyScenario.Run()中, 开始初始化过程Initialize() ");
+	    Initialize();
+
+            System.Console.WriteLine("MyScenario.cs 我的场景MyScenario.Run()中, 开始策略StartStrategy()");
+            StartStrategy();
+        }
+    }
+}
+```
+
+在**MyScenario.Design.cs **中添加代码：
+
+```
+using System;
+
+using SmartQuant;
+
+namespace OpenQuant
+{
+    public partial class MyScenario
+    {
+		public void Initialize()
+		{
+			System.Console.WriteLine(" MyScenario.Designer.cs 我的场景MyScenario.Initialize()过程中...");
+		}
+    }
+}
+```
+
+在**MyStrategy.cs **中添加代码：
+
+```
+using System;
+
+using SmartQuant;
+
+namespace OpenQuant
+{
+    public class MyStrategy : InstrumentStrategy
+    {
+		public MyStrategy(Framework framework, string name)
+            : base(framework, name)
+        {
+        }
+
+        protected override void OnStrategyStart()
+        {
+			System.Console.WriteLine("MyStrategy.cs 我的策略MyStrategy中OnStrategyStart()");
+        }
+
+        protected override void OnBar(Instrument instrument, Bar bar)
+        {
+			System.Console.WriteLine("MyStrategy.cs 我的策略MyStrategy中OnBar()事件");
+        }
+    }
+}
+```
+
+![](/icons/icon_labtubeOrg.ico)添加完成后，直接运行策略，我们可以中OpenQuant的Output窗口中看到如下输出：
+
+![](/assets/HelloWorldOutput01.png)
+
+这样，我们很清楚地看出OpenQuant的策略运行过程，先是场景定义和初始化过程，然后实例化我的策略，并运行。但策略中由于没有数据请求（data requests）, OpenQuant的回测模式就即可运行完成了整个策略过程。如果将运行模式切换至Paper或Live模式，策略就会一直处于空等待状态，并不会自动退出，知道手动停止。
 
 
 
