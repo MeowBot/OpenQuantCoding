@@ -26,17 +26,13 @@
 
 [http://www.quantbox.cn/download](http://www.quantbox.cn/download)
 
-
-
 OpenQuant安装及国内市场插件安装过程
 
-![](/assets/icon_text.png)详见[http://www.smartquant.cn/book/installing.html](http://www.smartquant.cn/book/installing.html)
+![](/assets/icon_book.png)详见[http://www.smartquant.cn/book/installing.html](http://www.smartquant.cn/book/installing.html)
 
 
 
 
 
-
-
-
+![](/assets/icon_pawprint.png)安装OpenQuant最新版本及国内市场插件，并可以导入当前期货合约代码，在市场开盘时段用OpenQuant中的
 
