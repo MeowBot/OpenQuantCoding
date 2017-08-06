@@ -26,8 +26,6 @@
 
 [http://www.quantbox.cn/download](http://www.quantbox.cn/download)
 
-
-
 # 安装OpenQuant软件及国内市场插件
 
 ---
@@ -46,11 +44,17 @@
 
 * [ ] 配置国内市场插件:
 
-1. 交易用户名及密码信息\(UserList\)
-2. CTP服务器地址信息\(ServerList\)
-3. 交易通道组合信息\(ApiList\)
+* 交易用户名及密码信息\(UserList\)
 
+* CTP服务器地址信息\(ServerList\)
 
+* 交易通道组合信息\(ApiList\)
+
+![](/assets/ApiManagerForm.png)                         图： 配置国内市场插件 -- 天风期货CTP
+
+配置完成后，连接插件应该能看见小小的绿色通道灯亮起。
+
+![](/assets/OQProvidersGreenLight.png)
 
 
 
