@@ -8,7 +8,7 @@
 
 安装OpenQuant软件时，OpenQuant安装程序会自动检测是否有合适的.NET Framework基础软件，如果需要安装程序会自动进行升级安装。
 
-![](/assets/icon_pawprint.png) 建议采用Windows Server 2012以上的面向服务器的操作系统软件。
+![](/icons/icon_paw.png) 建议采用Windows Server 2012以上的面向服务器的操作系统软件。
 
 # 下载OpenQuant软件及插件
 
@@ -26,19 +26,15 @@
 
 [http://www.quantbox.cn/download](http://www.quantbox.cn/download)
 
-
-
 # 安装OpenQuant软件及国内市场插件
 
 ---
 
 * **OpenQuant安装及国内市场插件安装过程**
 
-![](/assets/icon_book.png)详见[http://www.smartquant.cn/book/installing.html](http://www.smartquant.cn/book/installing.html)
+![](/icons/icon_bookbig.png)详见[http://www.smartquant.cn/book/installing.html](http://www.smartquant.cn/book/installing.html)
 
-
-
-* 简要过程
+![](/icons/icon_labtubeOrg.ico)**简要过程记录**
 
 * [ ] 安装OpenQuant最新版本;
 
@@ -58,5 +54,5 @@
 
 ![](/assets/OQProvidersGreenLight.png)
 
-![](/assets/icon_pawprint.png)下载并安装OpenQuant最新版本及国内市场插件。插件正确配置后可以正常连接至交易通道，可以导入当前期货合约代码，在市场开盘时段，打开OpenQuant中的QuoteMonitor界面，从Instruments窗口拖拽当前合约到QuoteMonitor界面中，可以看到该合约的当前市场报价。
+![](/icons/icon_paw.png)下载并安装OpenQuant最新版本及国内市场插件。插件正确配置后可以正常连接至交易通道，可以导入当前期货合约代码，在市场开盘时段，打开OpenQuant中的QuoteMonitor界面，从Instruments窗口拖拽当前合约到QuoteMonitor界面中，可以看到该合约的当前市场报价。
 
