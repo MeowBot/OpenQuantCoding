@@ -24,11 +24,7 @@
 
 # 安装OpenQuant软件
 
-# 
 
-# 
-
-# 
 
 # 安装OpenQuant插件
 
