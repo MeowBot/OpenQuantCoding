@@ -34,7 +34,7 @@
 
 ![](/icons/icon_bookbig.png)详见[http://www.smartquant.cn/book/installing.html](http://www.smartquant.cn/book/installing.html)
 
-##### ![](/icons/icon_labtubeOrg.ico)**简要过程记录**
+##### ![](/icons/icon_labtubeBlue.ico)**简要过程记录**
 
 * [ ] 安装OpenQuant最新版本;
 
