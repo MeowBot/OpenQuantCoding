@@ -43,21 +43,20 @@ using SmartQuant;
 
 namespace OpenQuant
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
+    class Program
+    {
+        static void Main(string[] args)
+        {
                        System.Console.WriteLine("Program.cs程序主入口： Main()");
-			
-			System.Console.WriteLine("Program.cs程序主入口中, 实例化MyScenario()");
-                       Scenario scenario = new MyScenario(Framework.Current);
-			
-                       System.Console.WriteLine("Program.cs程序主入口中, 运行Run()");
-			scenario.Run();
-		}
-	}
-}
 
+            System.Console.WriteLine("Program.cs程序主入口中, 实例化MyScenario()");
+                       Scenario scenario = new MyScenario(Framework.Current);
+
+                       System.Console.WriteLine("Program.cs程序主入口中, 运行Run()");
+            scenario.Run();
+        }
+    }
+}
 ```
 
 在**MyScenario.cs **中添加代码：
@@ -81,9 +80,9 @@ namespace OpenQuant
         {
             strategy = new MyStrategy(framework, "Backtest");
             System.Console.WriteLine("MyScenario.cs 我的场景MyScenario.Run()中, 实例化我的策略 new MyStrategy() ");
-			
-	    System.Console.WriteLine("MyScenario.cs 我的场景MyScenario.Run()中, 开始初始化过程Initialize() ");
-	    Initialize();
+
+        System.Console.WriteLine("MyScenario.cs 我的场景MyScenario.Run()中, 开始初始化过程Initialize() ");
+        Initialize();
 
             System.Console.WriteLine("MyScenario.cs 我的场景MyScenario.Run()中, 开始策略StartStrategy()");
             StartStrategy();
@@ -103,10 +102,10 @@ namespace OpenQuant
 {
     public partial class MyScenario
     {
-		public void Initialize()
-		{
-			System.Console.WriteLine(" MyScenario.Designer.cs 我的场景MyScenario.Initialize()过程中...");
-		}
+        public void Initialize()
+        {
+            System.Console.WriteLine(" MyScenario.Designer.cs 我的场景MyScenario.Initialize()过程中...");
+        }
     }
 }
 ```
@@ -122,19 +121,19 @@ namespace OpenQuant
 {
     public class MyStrategy : InstrumentStrategy
     {
-		public MyStrategy(Framework framework, string name)
+        public MyStrategy(Framework framework, string name)
             : base(framework, name)
         {
         }
 
         protected override void OnStrategyStart()
         {
-			System.Console.WriteLine("MyStrategy.cs 我的策略MyStrategy中OnStrategyStart()");
+            System.Console.WriteLine("MyStrategy.cs 我的策略MyStrategy中OnStrategyStart()");
         }
 
         protected override void OnBar(Instrument instrument, Bar bar)
         {
-			System.Console.WriteLine("MyStrategy.cs 我的策略MyStrategy中OnBar()事件");
+            System.Console.WriteLine("MyStrategy.cs 我的策略MyStrategy中OnBar()事件");
         }
     }
 }
@@ -144,7 +143,5 @@ namespace OpenQuant
 
 ![](/assets/HelloWorldOutput01.png)
 
-这样，我们很清楚地看出OpenQuant的策略运行过程，先是场景定义和初始化过程，然后实例化我的策略，并运行。但策略中由于没有数据请求（data requests）, OpenQuant的回测模式就即可运行完成了整个策略过程。如果将运行模式切换至Paper或Live模式，策略就会一直处于空等待状态，并不会自动退出，知道手动停止。
-
-
+这样，我们很清楚地看出OpenQuant的策略运行过程，先是场景定义和初始化过程，然后实例化我的策略并运行。但策略中由于没有数据请求（data requests）, OpenQuant的回测模式就即可运行完成了整个策略过程。如果将运行模式切换至仿真Paper或实盘Live模式，策略就会一直处于空等待状态，并不会自动退出，直到手动停止。
 
