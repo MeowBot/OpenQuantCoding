@@ -26,9 +26,29 @@
 
 [http://www.quantbox.cn/download](http://www.quantbox.cn/download)
 
-OpenQuant安装及国内市场插件安装过程
+
+
+# 安装OpenQuant软件及国内市场插件
+
+---
+
+* **OpenQuant安装及国内市场插件安装过程**
 
 ![](/assets/icon_book.png)详见[http://www.smartquant.cn/book/installing.html](http://www.smartquant.cn/book/installing.html)
+
+
+
+* 简要过程
+
+* [ ] 安装OpenQuant最新版本;
+
+* [ ] 安装国内市场插件;
+
+* [ ] 配置国内市场插件:
+
+1. 交易用户名及密码信息\(UserList\)
+2. CTP服务器地址信息\(ServerList\)
+3. 交易通道组合信息\(ApiList\)
 
 
 
@@ -37,6 +57,4 @@ OpenQuant安装及国内市场插件安装过程
 
 
 ![](/assets/icon_pawprint.png)下载并安装OpenQuant最新版本及国内市场插件。插件正确配置后可以正常连接至交易通道，可以导入当前期货合约代码，在市场开盘时段，打开OpenQuant中的QuoteMonitor界面，从Instruments窗口拖拽当前合约到QuoteMonitor界面中，可以看到该合约的当前市场报价。
-
-
 
