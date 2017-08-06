@@ -34,5 +34,9 @@ OpenQuant安装及国内市场插件安装过程
 
 
 
-![](/assets/icon_pawprint.png)安装OpenQuant最新版本及国内市场插件，并可以导入当前期货合约代码，在市场开盘时段用OpenQuant中的
+
+
+![](/assets/icon_pawprint.png)下载并安装OpenQuant最新版本及国内市场插件。插件正确配置后可以正常连接至交易通道，可以导入当前期货合约代码，在市场开盘时段，打开OpenQuant中的QuoteMonitor界面，从Instruments窗口拖拽当前合约到QuoteMonitor界面中，可以看到该合约的当前市场报价。
+
+
 
