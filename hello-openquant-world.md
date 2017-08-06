@@ -2,7 +2,7 @@
 
 ---
 
-OpenQuant的开发体系是基于标准的微软C\#编程语言及.NET开发框架。下面的文档中，默认读者已经可以使用C\#编程语言及使用过Visual Studio开发工具。
+OpenQuant的开发体系是基于标准的微软C\#编程语言及.NET开发框架。下面的文档中，默认认为我们的读者已经可以使用C\#编程语言并使用过Visual Studio开发工具。
 
 ## 创建第一个解决方案（C\# solution）
 
@@ -28,11 +28,11 @@ MyStrategy目录中的
 
 ## OpenQuant的解决方案中代码的运行关系
 
-这是一个标准的微软C\#解决方案，在这个_myFirstStrategy_解决方案（Solution）中有两个项目（Project）：Backtest，MyStrategy，Backtest项目是默认的启动项目。代码关系如下图的所示：
+这是一个标准的微软C\#解决方案，在这个**myFirstStrategy**解决方案（Solution）中有两个项目（Project）：Backtest，MyStrategy，Backtest项目是默认的启动项目。代码关系如下图的所示：
 
 ![](/assets/myFirstStrategyCodeMap.png)
 
-![](/icons/icon_labtubeBlue.ico)为了掌握OpenQuant解决方案代码运行中的调用关系，我们在该项目文件中增加输出信息，使得程序运行时，可以呈现代码运行顺序和调用关系。
+![](/icons/icon_labtubeBlue.ico)为了掌握OpenQuant解决方案代码运行中的调用关系，我们在该项目文件中增加输出信息，使得程序运行时，可以呈现代码运行顺序和调用过程。
 
 在**Program.cs **中添加代码：
 
@@ -143,5 +143,5 @@ namespace OpenQuant
 
 ![](/assets/HelloWorldOutput01.png)
 
-这样，我们很清楚地看出OpenQuant的策略运行过程，先是场景定义和初始化过程，然后实例化我的策略并运行。但策略中由于没有数据请求（data requests）, OpenQuant的回测模式就即可运行完成了整个策略过程。如果将运行模式切换至仿真Paper或实盘Live模式，策略就会一直处于空等待状态，并不会自动退出，直到手动停止。
+这样，我们很清楚地看出OpenQuant的策略运行过程，先是场景定义和初始化过程，然后实例化我的策略并运行。但策略中由于没有数据请求（data requests）, OpenQuant的回测模式就即可运行完成了整个策略过程。如果将运行模式切换至仿真Paper或实盘Live模式，策略就会一直处于等待市场数据状态，并不会自动退出，直到手动停止。
 
