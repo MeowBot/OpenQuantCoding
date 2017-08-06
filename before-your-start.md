@@ -1,5 +1,7 @@
 # 计算机运行环境的选择与准备
 
+---
+
 * **运行环境的选择**
 
 目前的OpenQuant需要微软Windows运行环境，支持微软最新版本的OpenQuant支持Windows7，Windows8，Windows10及Windows Server 2008，Windows Server 2012等主流的Windows 64位操作系统。
@@ -9,6 +11,8 @@
 ![](/assets/icon_pawprint.png) 建议采用Windows Server 2012以上的面向服务器的操作系统软件。
 
 # 下载OpenQuant软件及插件
+
+---
 
 * **OpenQuant最新版本下载地址：**
 
@@ -22,13 +26,17 @@
 
 [http://www.quantbox.cn/download](http://www.quantbox.cn/download)
 
-# 安装OpenQuant软件
+
+
+OpenQuant安装及国内市场插件安装过程
+
+![](/assets/icon_text.png)详见[http://www.smartquant.cn/book/installing.html](http://www.smartquant.cn/book/installing.html)
 
 
 
-# 安装OpenQuant插件
 
----
+
+
 
 
 
