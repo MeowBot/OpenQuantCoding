@@ -12,9 +12,13 @@ OpenQuant的开发体系是基于标准的微软C\#编程语言及.NET开发框�
 
 图：一个默认解决方案包含的文件结构
 
-
-
 这是一个标准的微软C\#解决方案，在这个_myFirstStrategy_解决方案（Solution）中有两个项目（Project）：Backtest，MyStrategy，Backtest项目是默认的启动项目。代码关系如下图的所示：
 
 ![](/assets/myFirstStrategyCodeMap.png)
+
+
+
+
+
+
 
