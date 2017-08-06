@@ -2,9 +2,12 @@
 
 ---
 
-支持windows 10 , windows server 2012 , windows server 2016等目前主流的64位版本Windows系统。
+        OpenQuant系统运行在微软Windows操作系统，支持微软最新版本的OpenQuant支持Windows7，Windows8，Windows10及Windows Server 2008，Windows Server 2012等主流的Windows 64位操作系统。  
+        安装OpenQuant软件时，OpenQuant安装程序会自动检测是否有合适的.NET Framework基础软件，如果需要安装程序会自动进行升级安装。
 
-结论： 安装Windows Server 2012
+
+
+结论：建议采用Windows Server 2012以上的面向服务器的操作系统软件。
 
 # 下载OpenQuant软件及插件
 
@@ -26,22 +29,15 @@
 
 ---
 
+# 
 
+# 
 
-
-
-
+# 
 
 # 安装OpenQuant插件
 
 ---
 
-结论： 安装Windows Server 2012
-
-
-
-
-
-  
 
 
