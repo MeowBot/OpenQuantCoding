@@ -1,4 +1,4 @@
-# 计算机运行环境
+# 计算机运行环境的选择与准备
 
 ---
 
@@ -22,11 +22,13 @@
 
 [http://www.quantbox.cn/download](http://www.quantbox.cn/download)
 
-
-
 # 安装OpenQuant软件
 
 ---
+
+
+
+
 
 
 
@@ -34,11 +36,12 @@
 
 ---
 
+结论： 安装Windows Server 2012
 
 
 
 
 
-
+  
 
 
