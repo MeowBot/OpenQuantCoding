@@ -26,20 +26,14 @@ OpenQuant的策略运行机制是构造出扑捉市场数据的处理逻辑后�
 下面就是一个成交事件处理的代码，你可以在SMACrossover策略解决方案中的MyStrategy工程的MyStrategy.cs代码中找到：
 
 ```
-	protected override void OnFill(Fill fill)
-		{
-			// Add fill to group.
-			Log(fill, "Fills");
-		}
-
-
+    protected override void OnFill(Fill fill)
+        {
+            // Add fill to group.
+            Log(fill, "Fills");
+        }
 ```
 
 
 
-
-
-
-
-
+![](/icons/icon_paw.png)在对OpenQuant的代码结构和驱动机制有了大致的了解后，让我们来开始搞一个OpenQuant的HelloWorld系统吧... 
 
