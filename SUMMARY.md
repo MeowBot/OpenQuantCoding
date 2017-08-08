@@ -6,4 +6,13 @@
 * [开始一个Hello World](hello-world.md)
 * [OpenQuant策略代码的结构](structure-of-openquant-solution.md)
 * [设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
+* [code an OpenQuant HelloWorld](code-an-openquant-helloworld.md)
+
+
+
+
+
+
+
+
 
