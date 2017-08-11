@@ -10,15 +10,13 @@
 
 ![](/icons/icon_labtubeBlue.ico)现在，我们按照设计，再增加一个实盘交易场景工程Realtime。在OpenQuant的Solution Explorer中找到刚刚建立的解决方案HelloWorld，在HelloWorld上鼠标右键，**Add**一个**New Project... ** 我们增加一个场景工程， 选择SmartQuant Scenario Project， 命名为 _**Realtime **_
 
-
-
 # 开始编写回测场景及逻辑代码
 
 现在我们按照设计，这个解决方案（Solution）中已经有了三个工程：一个回测场景，一个实盘场景，一个策略主体; 让我们来加入代码:
 
-![](/icons/icon_labtubeBlue.ico)在回测场景工程（Backtest）中，增加回测场景的定义，包括测试的合约，我们引入螺纹钢期货rb1709合约，我们假设你已经在OpenQuant中引入了rb1709合约，同时使用历史数据插件导入了2017年1月1日至2017年3月1日的Tick级别的历史数据。
+![](/icons/icon_labtubeBlue.ico)在回测场景工程（Backtest）中，将场景类的名字从MyScenario改为Backtest，以和Realtime场景类更为明确地加以区别。并增加回测场景的定义，包括测试的合约，我们引入螺纹钢期货rb1709合约，我们假设你已经在OpenQuant中引入了rb1709合约，同时使用历史数据插件导入了2017年1月1日至2017年3月1日的Tick级别的历史数据。
 
-1. 在**Backtest**工程中的**MyScenario.cs**文件中，编写代码如下
+1. 在**Backtest**工程的**MyScenario.cs**文件中，编写代码如下
 
 ```
 using System;
@@ -50,7 +48,7 @@ namespace OpenQuant
 
             //定义数据回测的起止日期
             DataSimulator.SubscribeBar = false;
-            DataSimulator.DateTime1 = new DateTime(2013, 01, 01);
+            DataSimulator.DateTime1 = new DateTime(2017, 01, 01);
             DataSimulator.DateTime2 = new DateTime(2017, 03, 01);
 
             //定义一个时间类型的K线
@@ -58,7 +56,7 @@ namespace OpenQuant
             BarFactory.Add(instrument1, BarType.Time, barSize);
 
 
-            //? Initialize();
+            Initialize();
 
             StartStrategy();
         }
@@ -66,13 +64,48 @@ namespace OpenQuant
 }
 ```
 
-上面的代码public partial class Backtest:Scenario 修改了原来OpenQuant自动生成的public partial class MyScenario:Scenario , 为此我们也要修改这个工程中的MyScenario.Designer.cs中这个“类”的名字， 把自动生成的public partial class MyScenario改为
+上面的代码public partial class** Backtest**:Scenario 修改了原来OpenQuant自动生成的public partial class **MyScenario**:Scenario , 为此我们也要修改这个工程中的MyScenario.Designer.cs中这个“类”的名字， 把自动生成的public partial class MyScenario改为public partial class Backtest 
 
+在Backtest工程中的**MyScenario.Designer.cs**文件中，编写代码如下
 
+```
+using System;
 
+using SmartQuant;
 
+namespace OpenQuant
+{
+    public partial class Backtest
+    {
+		public void Initialize()
+		{
+		}
+    }
+}
+```
 
+在Backtest工程中的**Program.cs**文件中，编写代码如下
 
+```
+using System;
+
+using SmartQuant;
+
+namespace OpenQuant
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Scenario scenario = new Backtest(Framework.Current);
+
+			scenario.Run();
+		}
+	}
+}
+```
+
+我们从这个工程的入口程序中，我们可以看到，程序开始运行后，就从一个叫做Backtest的场景类初始化，并开始让场景运行。
 
 
 
