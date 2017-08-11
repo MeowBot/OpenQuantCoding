@@ -149,17 +149,15 @@ namespace OpenQuant
 }
 ```
 
-
-
 ![](/icons/icon_paw.png)这时你有了一个可以回测合约的历史数据，基础框架，运行结果如下：
 
 ![](/assets/OpenQuantHelloWorldRunning.png)
 
 上述完整代码可以从如下地址获得：
 
-![](/icons/icon_book.png) https://github.com/omnistep/OpenQuantHelloWorld 获得。
+![](/icons/icon_book.png) [https://github.com/omnistep/OpenQuantHelloWorld](https://github.com/omnistep/OpenQuantHelloWorld) 获得。
 
-# 开始编写实盘接入场景
+# 开始编写实盘接入场景Realtime
 
 为了能接入实时到动态行情数据，我们要定义实盘接入场景，在Realtime工程中的**MyScenario.cs**文件中，编写代码如下：
 
