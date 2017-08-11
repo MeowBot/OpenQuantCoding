@@ -84,7 +84,7 @@ namespace OpenQuant
 }
 ```
 
-在Backtest工程中的**Program.cs**文件中，编写代码如下
+在Backtest工程中的**Program.cs**文件中，编写代码如下，同样将原有的MyScenario改为Backtest
 
 ```
 using System;
@@ -151,7 +151,7 @@ namespace OpenQuant
 
 # 开始编写实盘接入场景
 
-为了能接入实时到动态行情数据，我们要定义实盘接入场景，在**Backtest**工程中的**MyScenario.cs**文件中，编写代码如下：
+为了能接入实时到动态行情数据，我们要定义实盘接入场景，在Realtime工程中的**MyScenario.cs**文件中，编写代码如下：
 
 ```
 
