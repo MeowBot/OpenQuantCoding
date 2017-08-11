@@ -10,7 +10,7 @@
 
 ![](/icons/icon_labtubeBlue.ico)现在，我们按照设计，再增加一个实盘交易场景工程Realtime。在OpenQuant的Solution Explorer中找到刚刚建立的解决方案HelloWorld，在HelloWorld上鼠标右键，**Add**一个**New Project... ** 我们增加一个场景工程， 选择SmartQuant Scenario Project， 命名为 _**Realtime **_
 
-# 开始编写回测场景及逻辑代码
+# 开始编写回测场景Backtest
 
 现在我们按照设计，这个解决方案（Solution）中已经有了三个工程：一个回测场景，一个实盘场景，一个策略主体; 让我们来加入代码:
 
@@ -107,7 +107,11 @@ namespace OpenQuant
 
 我们从这个工程的入口程序中，我们可以看到，程序开始运行后，就从一个叫做Backtest的场景类初始化，并开始让场景运行。
 
-1. 在**MyStrategy**工程中的**MyStrategy.cs**文件中，编写代码如下
+# 开始编写核心策略逻辑MyStrategy
+
+我们在这个核心逻辑中，当行情数据产生了K线中新的Bar时，我们在信息输出窗口中向外输出期待已久的HelloWorld，同时显示合约名字和当前行情形成K的Bar的平均价格。
+
+![](/icons/icon_labtubeBlue.ico)在**MyStrategy**工程中的**MyStrategy.cs**文件中，编写代码如下
 
 ```
 using System;
@@ -145,9 +149,15 @@ namespace OpenQuant
 }
 ```
 
+
+
 ![](/icons/icon_paw.png)这时你有了一个可以回测合约的历史数据，基础框架，运行结果如下：
 
 ![](/assets/OpenQuantHelloWorldRunning.png)
+
+上述完整代码可以从如下地址获得：
+
+![](/icons/icon_book.png) https://github.com/omnistep/OpenQuantHelloWorld 获得。
 
 # 开始编写实盘接入场景
 
