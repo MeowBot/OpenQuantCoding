@@ -10,6 +10,8 @@
 
 ![](/icons/icon_labtubeBlue.ico)现在，我们按照设计，再增加一个实盘交易场景工程Realtime。在OpenQuant的Solution Explorer中找到刚刚建立的解决方案HelloWorld，在HelloWorld上鼠标右键，**Add**一个**New Project... ** 我们增加一个场景工程， 选择SmartQuant Scenario Project， 命名为 _**Realtime **_
 
+
+
 # 开始编写回测场景及逻辑代码
 
 现在我们按照设计，这个解决方案（Solution）中已经有了三个工程：一个回测场景，一个实盘场景，一个策略主体; 让我们来加入代码:
@@ -25,47 +27,60 @@ using SmartQuant;
 
 namespace OpenQuant
 {
-	public class Backtest : Scenario
+    public class Backtest : Scenario
     {
-		//定义K线时间周期为barSize秒
-		private long barSize = 60;
-		
-        public Backtest(Framework framework)
+        //定义K线时间周期为barSize秒
+        private long barSize = 60;
+
+        public partial class Backtest(Framework framework)
             : base(framework)
         {
         }
 
         public override void Run()
         {
-			//定义要引入的合约名字
-			Instrument instrument1 = InstrumentManager.Instruments["rb1709"];
-			
-			
-            strategy = new MyStrategy(framework, "HelloWorld");
-			
-			//引入合约
-			strategy.AddInstrument(instrument1);
-			
-			//定义数据回测的起止日期
-			DataSimulator.SubscribeBar = false;
-			DataSimulator.DateTime1 = new DateTime(2013, 01, 01);
-			DataSimulator.DateTime2 = new DateTime(2017, 03, 01);
+            //定义要引入的合约名字
+            Instrument instrument1 = InstrumentManager.Instruments["rb1709"];
 
-			//定义一个时间类型的K线
-			BarFactory.Clear();
-			BarFactory.Add(instrument1, BarType.Time, barSize);
-			
-			
-			//? Initialize();
-			
+
+            strategy = new MyStrategy(framework, "HelloWorld");
+
+            //引入合约
+            strategy.AddInstrument(instrument1);
+
+            //定义数据回测的起止日期
+            DataSimulator.SubscribeBar = false;
+            DataSimulator.DateTime1 = new DateTime(2013, 01, 01);
+            DataSimulator.DateTime2 = new DateTime(2017, 03, 01);
+
+            //定义一个时间类型的K线
+            BarFactory.Clear();
+            BarFactory.Add(instrument1, BarType.Time, barSize);
+
+
+            //? Initialize();
+
             StartStrategy();
         }
     }
 }
-
 ```
 
-2. 在**MyStrategy**工程中的**MyStrategy.cs**文件中，编写代码如下
+上面的代码public partial class Backtest:Scenario 修改了原来OpenQuant自动生成的public partial class MyScenario:Scenario , 为此我们也要修改这个工程中的MyScenario.Designer.cs中这个“类”的名字， 把自动生成的public partial class MyScenario改为
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. 在**MyStrategy**工程中的**MyStrategy.cs**文件中，编写代码如下
 
 ```
 using System;
@@ -77,32 +92,30 @@ namespace OpenQuant
 {
     public class MyStrategy : InstrumentStrategy
     {
-		public MyStrategy(Framework framework, string name)
+        public MyStrategy(Framework framework, string name)
             : base(framework, name)
         {
         }
 
         protected override void OnStrategyStart()
         {
-			//定义K线的画布，编码0号
-			Group("myK-Chart", "Pad", 1);
+            //定义K线的画布，编码0号
+            Group("myK-Chart", "Pad", 1);
         }
 
         protected override void OnBar(Instrument instrument, Bar bar)
         {
-		//当Bar形成时，增加bar数据到K线序列
-		Bars.Add(bar);
+        //当Bar形成时，增加bar数据到K线序列
+        Bars.Add(bar);
 
-		//在Bars画布上画出K线
-		Log(bar, "myK-Chart");
-			
-		//就是这句期待已久的HelloWorld！同时显示bar时间，合约代码，bar中的均价
-		Console.WriteLine("HelloWorld! "+bar.DateTime.ToString()+ " "+instrument.Symbol + "  ="+bar.Average.ToString());
+        //在Bars画布上画出K线
+        Log(bar, "myK-Chart");
+
+        //就是这句期待已久的HelloWorld！同时显示bar时间，合约代码，bar中的均价
+        Console.WriteLine("HelloWorld! "+bar.DateTime.ToString()+ " "+instrument.Symbol + "  ="+bar.Average.ToString());
         }
     }
 }
-
-
 ```
 
 ![](/icons/icon_paw.png)这时你有了一个可以回测合约的历史数据，基础框架，运行结果如下：
