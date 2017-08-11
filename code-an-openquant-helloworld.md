@@ -25,12 +25,12 @@ using SmartQuant;
 
 namespace OpenQuant
 {
-    public class Backtest : Scenario
+    public partial class Backtest : Scenario
     {
         //定义K线时间周期为barSize秒
         private long barSize = 60;
 
-        public partial class Backtest(Framework framework)
+        public Backtest(Framework framework)
             : base(framework)
         {
         }
@@ -64,7 +64,7 @@ namespace OpenQuant
 }
 ```
 
-上面的代码public partial class** Backtest**:Scenario 修改了原来OpenQuant自动生成的public partial class **MyScenario**:Scenario , 为此我们也要修改这个工程中的MyScenario.Designer.cs中这个“类”的名字， 把自动生成的public partial class MyScenario改为public partial class Backtest 
+上面的代码public partial class** Backtest**:Scenario 修改了原来OpenQuant自动生成的public partial class **MyScenario**:Scenario , 为此我们也要修改这个工程中的MyScenario.Designer.cs中这个“类”的名字， 把自动生成的public partial class MyScenario改为public partial class Backtest
 
 在Backtest工程中的**MyScenario.Designer.cs**文件中，编写代码如下
 
@@ -77,9 +77,9 @@ namespace OpenQuant
 {
     public partial class Backtest
     {
-		public void Initialize()
-		{
-		}
+        public void Initialize()
+        {
+        }
     }
 }
 ```
@@ -93,25 +93,19 @@ using SmartQuant;
 
 namespace OpenQuant
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			Scenario scenario = new Backtest(Framework.Current);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Scenario scenario = new Backtest(Framework.Current);
 
-			scenario.Run();
-		}
-	}
+            scenario.Run();
+        }
+    }
 }
 ```
 
 我们从这个工程的入口程序中，我们可以看到，程序开始运行后，就从一个叫做Backtest的场景类初始化，并开始让场景运行。
-
-
-
-
-
-
 
 1. 在**MyStrategy**工程中的**MyStrategy.cs**文件中，编写代码如下
 
