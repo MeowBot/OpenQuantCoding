@@ -1,6 +1,6 @@
 # OpenQuantCoding
 
-My notebook for building an OpenQuant Trading System step by step.     ver. 0052
+My notebook for building an OpenQuant Trading System step by step.     ver. 0066
 
 ---
 
