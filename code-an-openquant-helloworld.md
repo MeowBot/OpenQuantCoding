@@ -181,45 +181,48 @@ namespace OpenQuant
 {
     public partial class Realtime : Scenario
     {
-		private long barSize = 3;
-		
+        private long barSize = 3;
+
          public Realtime(Framework framework)
             : base(framework)
         {
-		}
+        }
 
         public override void Run()
         {
-			//定义合约
-			Instrument instrument1 = InstrumentManager.Instruments["ag1712"];
-			
-			strategy = new MyStrategy(framework, "HelloWorld");
-			
-			//引入合约到主策略工程
-			strategy.AddInstrument(instrument1);
+            //定义合约
+            Instrument instrument1 = InstrumentManager.Instruments["ag1712"];
 
-			//定义主策略中使用的合约的数据源和交易通道
-			strategy.DataProvider = ProviderManager.GetDataProvider("A99CTP");
-			strategy.ExecutionProvider = ProviderManager.GetExecutionProvider("A99CTP");
+            strategy = new MyStrategy(framework, "HelloWorld");
 
-			//定义K线类型：时间型K线，barSize秒生成一个Bar
-			BarFactory.Clear();
-			BarFactory.Add(instrument1, BarType.Time, barSize);
-			
-			Initialize();
-			
-			//Run the strategy
-			StartStrategy();
-			
+            //引入合约到主策略工程
+            strategy.AddInstrument(instrument1);
+
+            //定义主策略中使用的合约的数据源和交易通道
+            strategy.DataProvider = ProviderManager.GetDataProvider("A99CTP");
+            strategy.ExecutionProvider = ProviderManager.GetExecutionProvider("A99CTP");
+
+            //定义K线类型：时间型K线，barSize秒生成一个Bar
+            BarFactory.Clear();
+            BarFactory.Add(instrument1, BarType.Time, barSize);
+
+            Initialize();
+
+            //Run the strategy
+            StartStrategy();
+
         }
     }
 }
-
 ```
 
 这里HelloWolrd解决方案的Realtime工程中的Scenario.Designer.cs及Program.cs均不需要改动代码。
 
 ![](/icons/icon_labtubeOrg.ico)在OpenQuant的Solution Explorer中，将Realtime工程设置为启动工程（Set as StartUp Project），然后把OpenQuant切换为实盘模式（Live）后，运行HelloWorld解决方案，并观察输出：
+
+
+
+
 
 
 
