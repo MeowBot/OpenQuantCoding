@@ -160,7 +160,7 @@ namespace OpenQuant
 
 1. ## 引入MyStrategy工程类
 
-在接入实盘收行情时，我们会将解决方案中的Realtime作为启动工程，在这个工程中初始化场景后，即将实例化一个主逻辑MyStrategy类，为此，我们先要在Realtime工程中，引入MyStrategy工程类。
+在接入实盘收行情时，我们会将解决方案中的Realtime作为启动工程，在这个工程中将实例化一个主逻辑MyStrategy类，为此，我们先要在Realtime工程中，引入MyStrategy工程类。正如OpenQuant生成的Backtest中已经引入了Mystrategy工程类一样。
 
 ![](/icons/icon_labtubeBlue.ico)在OpenQuant的Solution Explorer中的Realtime工程的References中，鼠标右键Add，选择Solution后，选择添加MyStrategy工程。
 
