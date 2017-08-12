@@ -14,7 +14,17 @@
 
 1. # 开始编写回测场景Backtest
 
-![](/icons/icon_labtubeBlue.ico)在回测场景工程（Backtest）中，将场景类的名字从MyScenario改为Backtest，以和Realtime场景类更为明确地加以区别。并增加回测场景的定义，包括测试的合约，我们引入螺纹钢期货rb1709合约，我们假设你已经在OpenQuant中引入了rb1709合约，同时使用历史数据插件导入了2017年1月1日至2017年3月1日的Tick级别的历史数据。
+![](/icons/icon_labtubeBlue.ico)在回测场景工程（Backtest）中，将场景类的名字从MyScenario改为Backtest，以便能和Realtime场景类更为明确地加以区别。修改这个类名会涉及MyScenarios.cs，MySenario.Designer.cs，Program.cs 文件中所有该类定义及调用的代码。如果用微软的Vistual Studio工具将非常的自动化完成这类代码编写工作。
+
+然后，我们增加回测场景的定义，包括测试的合约，我们引入螺纹钢期货rb1709合约，我们假设你已经在OpenQuant中引入了rb1709合约，同时使用历史数据插件导入了2017年1月1日至2017年3月1日的Tick级别的历史数据。
+
+
+
+![](/icons/icon_bookbig.png)OpenQuant引入合约代码及导入历史数据，请参考如下资料：
+
+[http://www.smartquant.cn/book/domestic\_market\_data.html](http://www.smartquant.cn/book/domestic_market_data.html "OpenQuant导入合约代码及历史数据")
+
+
 
 1. 在**Backtest**工程的**MyScenario.cs**文件中，编写代码如下
 
@@ -219,16 +229,6 @@ namespace OpenQuant
 这里HelloWolrd解决方案的Realtime工程中的Scenario.Designer.cs及Program.cs均不需要改动代码。
 
 ![](/icons/icon_labtubeOrg.ico)在OpenQuant的Solution Explorer中，将Realtime工程设置为启动工程（Set as StartUp Project），然后把OpenQuant切换为实盘模式（Live）后，运行HelloWorld解决方案，并观察输出：
-
-
-
-
-
-
-
-
-
-
 
 Coming soon... ...
 
