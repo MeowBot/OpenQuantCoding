@@ -36,7 +36,7 @@
 
 
 
-## 配置插件让OpenQuant接入市场 {#installoqandplugins}
+## 配置插件让OpenQuant接入市场 {#configplugins}
 
 ---
 
