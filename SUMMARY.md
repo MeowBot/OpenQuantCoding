@@ -1,6 +1,6 @@
 # Summary
 
-## 第一部分: OpenQuant入门
+## 第一章 
 
 * [Introduction](README.md)
 * [在开始之前的准备](before-your-start.md)
