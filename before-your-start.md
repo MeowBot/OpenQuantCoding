@@ -2,7 +2,7 @@
 
 ---
 
-* ### 基础操作系统**的选择** {#runningos}
+## 基础操作系统**的选择**
 
 目前的OpenQuant需要微软Windows运行环境，支持微软最新版本的OpenQuant支持Windows7，Windows8，Windows10及Windows Server 2008，Windows Server 2012等主流的Windows 64位操作系统。
 
@@ -10,7 +10,7 @@
 
 ![](/icons/icon_paw.png) 建议采用Windows Server 2012以上的面向服务器的操作系统软件。
 
-## 下载OpenQuant软件及插件
+## 下载OpenQuant软件及插件 {#downloadoqandplugins}
 
 ---
 
@@ -34,7 +34,13 @@
 
 ![](/icons/icon_bookbig.png)详见[http://www.smartquant.cn/book/installing.html](http://www.smartquant.cn/book/installing.html)
 
-##### ![](/icons/icon_labtubeBlue.ico)**简要过程记录**
+
+
+## 配置插件让OpenQuant接入市场 {#installoqandplugins}
+
+---
+
+##### ![](/icons/icon_labtubeBlue.ico)**简要OpenQuant安装过程及配置插件记录**
 
 * [ ] 安装OpenQuant最新版本;
 
@@ -54,5 +60,7 @@
 
 ![](/assets/OQProvidersGreenLight.png)
 
-![](/icons/icon_paw.png)下载并安装OpenQuant最新版本及国内市场插件。插件正确配置后可以正常连接至交易通道，可以导入当前期货合约代码，在市场开盘时段，打开OpenQuant中的QuoteMonitor界面，从Instruments窗口拖拽当前合约到QuoteMonitor界面中，可以看到该合约的当前市场报价。
+
+
+![](/icons/icon_paw.png)现在，我们已经下载并安装了OpenQuant最新版本及国内市场插件。插件正确配置后可以正常连接至交易通道，可以导入当前期货合约代码，在市场开盘时段，打开OpenQuant中的QuoteMonitor界面，从Instruments窗口拖拽当前合约到QuoteMonitor界面中，可以看到该合约的当前市场报价。
 
