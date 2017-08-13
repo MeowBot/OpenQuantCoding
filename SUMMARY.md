@@ -6,8 +6,7 @@
   * [下载OpenQuant及插件](before-your-start.md#downloadoqandplugins)
   * [安装OpenQuant及插件](before-your-start.md#installoqandplugins)
   * [配置插件接入市场](before-your-start.md#configplugins)
-
-* [import an instrument and its historical data](import-an-instrument-and-its-historical-data.md)
+* [使用OpenQuant导入合约及历史数据](import-an-instrument-and-its-historical-data.md)
   * [使用ThanfData插件](import-an-instrument-and-its-historical-data.md#using)
   * [导入合约信息](import-an-instrument-and-its-historical-data.md#importinstrument)
   * [导入历史数据](import-an-instrument-and-its-historical-data.md#importdata)
@@ -15,6 +14,4 @@
 * [OpenQuant策略代码的结构](structure-of-openquant-solution.md)
 * [设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
 * [开始编写OpenQuant的HelloWorld](code-an-openquant-helloworld.md)
-
-
 
