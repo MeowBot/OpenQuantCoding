@@ -18,13 +18,9 @@
 
 然后，我们增加回测场景的定义，包括测试的合约，我们引入螺纹钢期货rb1709合约，我们假设你已经在OpenQuant中引入了rb1709合约，同时使用历史数据插件导入了2017年1月1日至2017年3月1日的Tick级别的历史数据。
 
-
-
 ![](/icons/icon_bookbig.png)OpenQuant引入合约代码及导入历史数据，请参考如下资料：
 
 [http://www.smartquant.cn/book/domestic\_market\_data.html](http://www.smartquant.cn/book/domestic_market_data.html "OpenQuant导入合约代码及历史数据")
-
-
 
 1. 在**Backtest**工程的**MyScenario.cs**文件中，编写代码如下
 
@@ -228,7 +224,15 @@ namespace OpenQuant
 
 这里HelloWolrd解决方案的Realtime工程中的Scenario.Designer.cs及Program.cs均不需要改动代码。
 
+
+
 ![](/icons/icon_labtubeOrg.ico)在OpenQuant的Solution Explorer中，将Realtime工程设置为启动工程（Set as StartUp Project），然后把OpenQuant切换为实盘模式（Live）后，运行HelloWorld解决方案，并观察输出：
+
+
+
+![](/icons/icon_paw.png)现在我们已经有了一个HelloWorld解决方案，该方案已经让我们完成一个主体逻辑后，同时可以进行回测状态，和实盘状态的定义和切换。如果需要回测，我们就将Backtest工程设置为启动项，如果进行实盘接入，我们就将Realtime工程设置为启动项。
+完整的代码应该存在版本控制系统中进行管理。
+
 
 Coming soon... ...
 
