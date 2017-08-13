@@ -17,7 +17,9 @@
 
 这样的结构如图所示：
 
-![](/assets/SMACrossoverCodeMap.png)图：OpenQuant策略示例SMACrossover的代码结构
+![](/assets/SMACrossoverCodeMap.png)
+
+图：OpenQuant策略示例SMACrossover的代码结构
 
 ## OpenQuant策略的驱动机制
 
@@ -33,7 +35,5 @@ OpenQuant的策略运行机制是构造出扑捉市场数据的处理逻辑后�
         }
 ```
 
-
-
-![](/icons/icon_paw.png)在对OpenQuant的代码结构和驱动机制有了大致的了解后，让我们来开始搞一个OpenQuant的HelloWorld系统吧... 
+![](/icons/icon_paw.png)在对OpenQuant的代码结构和驱动机制有了大致的了解后，让我们来开始搞一个OpenQuant的HelloWorld系统吧...
 
