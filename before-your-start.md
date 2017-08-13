@@ -2,7 +2,7 @@
 
 ---
 
-* ### 基础**运行环境的选择**
+* ### 基础操作系统**的选择** {#runningos}
 
 目前的OpenQuant需要微软Windows运行环境，支持微软最新版本的OpenQuant支持Windows7，Windows8，Windows10及Windows Server 2008，Windows Server 2012等主流的Windows 64位操作系统。
 
