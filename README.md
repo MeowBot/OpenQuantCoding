@@ -4,27 +4,13 @@ My notebook for building an OpenQuant Trading System step by step.     ver. 0066
 
 ---
 
-\|
 
-\|
 
-\|
 
-\|
 
-\|
 
-\|
 
-\|
 
-\|
-
-\|
-
-\|
-
-\|
 
 * 图标说明
 
