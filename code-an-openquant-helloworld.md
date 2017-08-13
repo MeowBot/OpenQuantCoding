@@ -12,7 +12,7 @@
 
 现在我们按照设计，这个解决方案（Solution）中已经有了三个工程：一个回测场景，一个实盘场景，一个策略主体; 让我们来在这三个工程中加入代码。
 
-1. # 开始编写回测场景Backtest
+# 开始编写回测场景Backtest
 
 ![](/icons/icon_labtubeBlue.ico)在回测场景工程（Backtest）中，将场景类的名字从MyScenario改为Backtest，以便能和Realtime场景类更为明确地加以区别。修改这个类名会涉及MyScenarios.cs，MySenario.Designer.cs，Program.cs 文件中所有该类定义及调用的代码。如果用微软的Vistual Studio工具将非常的自动化完成这类代码编写工作。
 
@@ -222,12 +222,11 @@ namespace OpenQuant
 
 ![](/icons/icon_labtubeOrg.ico)在OpenQuant的Solution Explorer中，将Realtime工程设置为启动工程（Set as StartUp Project），然后把OpenQuant切换为实盘模式（Live）后，运行HelloWorld解决方案，并观察输出：
 
-![](/icons/icon_paw.png)现在我们已经有了一个HelloWorld解决方案，该方案已经让我们完成一个主体逻辑后，同时可以进行回测状态，和实盘状态的定义和切换。如果需要回测，我们就将Backtest工程设置为启动项，如果进行实盘接入，我们就将Realtime工程设置为启动项。  
+![](/icons/icon_paw.png)现在我们已经有了一个HelloWorld解决方案，该方案已经让我们完成一个主体逻辑后，可以进行回测状态和实盘状态的定义和切换。如果需要回测，我们就将Backtest工程设置为启动项，如果进行实盘接入，我们就将Realtime工程设置为启动项。
+
 完整的代码应该存在版本控制系统中进行管理。
 
 上述完整HelloWorld代码可以从如下地址获得：
 
 ![](/icons/icon_book.png) [https://github.com/omnistep/OpenQuantHelloWorld](https://github.com/omnistep/OpenQuantHelloWorld) 获得。
-
-Coming soon... ...
 
