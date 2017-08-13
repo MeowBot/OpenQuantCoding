@@ -4,14 +4,6 @@ My notebook for building an OpenQuant Trading System step by step.     ver. 0066
 
 ---
 
-
-
-
-
-
-
-
-
 * 图标说明
 
 | 图标 | 代表含义 |
