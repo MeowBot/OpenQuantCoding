@@ -4,7 +4,7 @@
 * [在开始之前的准备](before-your-start.md)
   * [操作系统的选择](before-your-start.md#runingos)
   * [下载OpenQuant及插件](before-your-start.md#)
-  * [安装OpenQuant及插件](before-your-start.md#)
+  * [安装OpenQuant及插件](before-your-start.md#installoqandplugins)
   * [配置插件接入市场](before-your-start.md#)
 
 * [import an instrument and its historical data](import-an-instrument-and-its-historical-data.md)

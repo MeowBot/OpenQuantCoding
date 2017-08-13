@@ -26,7 +26,7 @@
 
 [http://www.quantbox.cn/download](http://www.quantbox.cn/download)
 
-## 安装OpenQuant软件及国内市场插件
+## 安装OpenQuant软件及国内市场插件 {#installoqandplugin}
 
 ---
 
