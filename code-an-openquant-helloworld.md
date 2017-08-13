@@ -158,9 +158,7 @@ namespace OpenQuant
 
 ![](/assets/OpenQuantHelloWorldRunning.png)
 
-上述完整代码可以从如下地址获得：
 
-![](/icons/icon_book.png) [https://github.com/omnistep/OpenQuantHelloWorld](https://github.com/omnistep/OpenQuantHelloWorld) 获得。
 
 # 开始编写实盘接入场景Realtime
 
@@ -224,15 +222,14 @@ namespace OpenQuant
 
 这里HelloWolrd解决方案的Realtime工程中的Scenario.Designer.cs及Program.cs均不需要改动代码。
 
-
-
 ![](/icons/icon_labtubeOrg.ico)在OpenQuant的Solution Explorer中，将Realtime工程设置为启动工程（Set as StartUp Project），然后把OpenQuant切换为实盘模式（Live）后，运行HelloWorld解决方案，并观察输出：
 
-
-
-![](/icons/icon_paw.png)现在我们已经有了一个HelloWorld解决方案，该方案已经让我们完成一个主体逻辑后，同时可以进行回测状态，和实盘状态的定义和切换。如果需要回测，我们就将Backtest工程设置为启动项，如果进行实盘接入，我们就将Realtime工程设置为启动项。
+![](/icons/icon_paw.png)现在我们已经有了一个HelloWorld解决方案，该方案已经让我们完成一个主体逻辑后，同时可以进行回测状态，和实盘状态的定义和切换。如果需要回测，我们就将Backtest工程设置为启动项，如果进行实盘接入，我们就将Realtime工程设置为启动项。  
 完整的代码应该存在版本控制系统中进行管理。
 
+上述完整HelloWorld代码可以从如下地址获得：
+
+![](/icons/icon_book.png) [https://github.com/omnistep/OpenQuantHelloWorld](https://github.com/omnistep/OpenQuantHelloWorld) 获得。
 
 Coming soon... ...
 
