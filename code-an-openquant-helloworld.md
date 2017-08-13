@@ -1,8 +1,8 @@
-# 编写一个OpenQuant的HelloWorld!
+# 开始编写OpenQuant的HelloWorld!
 
 ---
 
-# 用OpenQuant创建一个基础代码框架
+# 用OpenQuant创建一个基础代码框架 {#oqbasestrategyframework}
 
 ![](/icons/icon_labtubeBlue.ico)打开OpenQuant中的**File**菜单，**New**一个新的**solution**, 这里有一些解决方案类别选项，这个例子中，我们选择第一种“SmartQuant Instrument Strategy Solution”， 命名为_HelloWorld，_在OpenQuant的Solution Explorer窗口中，我们可以发现当前有两个工程，**Backtest**和**MyStratey**.这就是最基础的代码框架了，一个回测场景定义工程，一个策略主体工程。
 
@@ -157,8 +157,6 @@ namespace OpenQuant
 ![](/icons/icon_paw.png)这时你有了一个可以回测合约的历史数据，基础框架，运行结果如下：
 
 ![](/assets/OpenQuantHelloWorldRunning.png)
-
-
 
 # 开始编写实盘接入场景Realtime
 
