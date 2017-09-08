@@ -183,6 +183,7 @@ namespace OpenQuant
 {
     public partial class Realtime : Scenario
     {
+        //定义K线时间周期为barSize秒
         private long barSize = 3;
 
          public Realtime(Framework framework)
