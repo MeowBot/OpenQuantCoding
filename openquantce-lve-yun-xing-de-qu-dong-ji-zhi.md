@@ -9,6 +9,8 @@ OpenQuant的策略运行机制主要是构造出扑捉市场数据的处理逻�
         {
             // Add fill to group.
             Log(fill, "Fills");
+
+
         }
 ```
 
@@ -257,10 +259,4 @@ protected override void OnStopExecuted(Stop stop)
 使用上述的Reminder事件构造一个循环的定时器即可完成这个功能：
 
 
-
-
-
-
-
-![](/icons/icon_paw.png)在对OpenQuant的代码结构和驱动机制有了大致的了解后，让我们来开始搞一个OpenQuant的HelloWorld系统吧...
 
