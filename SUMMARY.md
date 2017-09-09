@@ -15,5 +15,5 @@
 * [4. 策略运行的事件驱动和定时驱动机制](openquantce-lve-yun-xing-de-qu-dong-ji-zhi.md)
 * [5. 设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
 * [6. 开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
-* [发出交易指令](place-an-order.md)
+* [7. 发出交易指令](place-an-order.md)
 
