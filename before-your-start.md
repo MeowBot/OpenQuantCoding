@@ -1,10 +1,10 @@
-# 在开始之前的准备
+# 1. 在开始之前的准备
 
 ---
 
 第一步我们要为可以长期稳定运行OpenQuant的准备一个专用环境，下载并安装好程序，配置好相应的参数，让OpenQuant可以接通中国市场。
 
-## 1. 基础操作系统的选择 {#runningos}
+## 1. 1 基础操作系统的选择 {#runningos}
 
 目前的OpenQuant需要微软Windows运行环境，支持微软最新版本的OpenQuant支持Windows7，Windows8，Windows10及Windows Server 2008，Windows Server 2012等主流的Windows 64位操作系统。
 
@@ -12,7 +12,7 @@
 
 ![](/icons/icon_paw.png) 建议采用Windows Server 2012以上的面向服务器的操作系统软件。
 
-## 2. 下载OpenQuant软件及插件 {#downloadoqandplugins}
+## 1.2 下载OpenQuant软件及插件 {#downloadoqandplugins}
 
 ---
 
@@ -28,7 +28,7 @@
 
 [http://www.quantbox.cn/download](http://www.quantbox.cn/download)
 
-## 3. 安装OpenQuant软件及国内市场插件 {#installoqandplugins}
+## 1.3 安装OpenQuant软件及国内市场插件 {#installoqandplugins}
 
 ---
 
@@ -36,7 +36,7 @@
 
 ![](/icons/icon_bookbig.png)详见[http://www.smartquant.cn/book/installing.html](http://www.smartquant.cn/book/installing.html)
 
-## 4. 配置插件让OpenQuant接入市场 {#configplugins}
+## 1.4 配置插件让OpenQuant接入市场 {#configplugins}
 
 ---
 
