@@ -13,7 +13,7 @@
 * [2. 管理未来所有的代码...](manage-your-coding-by-svn.md)
 * [3. OpenQuant策略代码的结构](structure-of-openquant-solution.md)
 * [4. 策略运行的事件驱动和定时驱动机制](openquantce-lve-yun-xing-de-qu-dong-ji-zhi.md)
-* [设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
-* [开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
+* [5. 设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
+* [6. 开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
 * [发出交易指令](place-an-order.md)
 
