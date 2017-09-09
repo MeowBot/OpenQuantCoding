@@ -16,4 +16,5 @@
 * [5. 设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
 * [6. 开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
 * [7. 发出交易指令](place-an-order.md)
+* [附：OpenQuant中的事件类型](the-events-in-openquant.md)
 
