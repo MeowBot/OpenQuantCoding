@@ -7,20 +7,20 @@ OpenQuant的策略运行机制主要是构造出扑捉市场数据的处理逻�
 ```
 protected override void OnFill(SmartQuant.Fill fill)
 {
-	// 在画布上绘制成交记录
-	Log(fill, "Fills");
-	
-	
-	// 在Output窗口中输出fill对象的当前数据...
-	System.Console.WriteLine("fill.DateTime=" + fill.DateTime.ToString());
-	System.Console.WriteLine("fill.CashFlow=" + fill.CashFlow.ToString());
-	System.Console.WriteLine("fill.Commission=" + fill.Commission.ToString());
-	
-	System.Console.WriteLine("fill.Instrument.Symbol=" + fill.Instrument.Symbol.ToString());
-	System.Console.WriteLine("fill.Instrument.Description=" + fill.Instrument.Description.ToString());
-	System.Console.WriteLine("fill.Instrument.Trade=" + fill.Instrument.Trade.ToString());
-	
-	System.Console.WriteLine("fill.Text=" + fill.Text.ToString());
+    // 在画布上绘制成交记录
+    Log(fill, "Fills");
+
+
+    // 在Output窗口中输出fill对象的当前数据...
+    System.Console.WriteLine("fill.DateTime=" + fill.DateTime.ToString());
+    System.Console.WriteLine("fill.CashFlow=" + fill.CashFlow.ToString());
+    System.Console.WriteLine("fill.Commission=" + fill.Commission.ToString());
+
+    System.Console.WriteLine("fill.Instrument.Symbol=" + fill.Instrument.Symbol.ToString());
+    System.Console.WriteLine("fill.Instrument.Description=" + fill.Instrument.Description.ToString());
+    System.Console.WriteLine("fill.Instrument.Trade=" + fill.Instrument.Trade.ToString());
+
+    System.Console.WriteLine("fill.Text=" + fill.Text.ToString());
 
 }
 ```
@@ -40,6 +40,10 @@ protected override void OnReminder(DateTime dateTime, object data)
     AddReminder(Clock.DateTime.AddSeconds(3));
 }
 ```
+
+##### 
+
+![](/icons/icon_book.png)[附：OpenQuant中的事件类型](/the-events-in-openquant.md)
 
 
 
