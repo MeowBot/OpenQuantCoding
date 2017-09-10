@@ -5,12 +5,24 @@ OpenQuant的策略运行机制主要是构造出扑捉市场数据的处理逻�
 下面就是一个成交事件处理的代码，你可以在SMACrossover策略解决方案中的MyStrategy工程的MyStrategy.cs代码中找到：
 
 ```
-    protected override void OnFill(Fill fill)
-        {
-           fill.Instrument.Exchange
+protected override void OnFill(SmartQuant.Fill fill)
+{
+	// 在画布上绘制成交记录
+	Log(fill, "Fills");
+	
+	
+	// 在Output窗口中输出fill对象的当前数据...
+	System.Console.WriteLine("fill.DateTime=" + fill.DateTime.ToString());
+	System.Console.WriteLine("fill.CashFlow=" + fill.CashFlow.ToString());
+	System.Console.WriteLine("fill.Commission=" + fill.Commission.ToString());
+	
+	System.Console.WriteLine("fill.Instrument.Symbol=" + fill.Instrument.Symbol.ToString());
+	System.Console.WriteLine("fill.Instrument.Description=" + fill.Instrument.Description.ToString());
+	System.Console.WriteLine("fill.Instrument.Trade=" + fill.Instrument.Trade.ToString());
+	
+	System.Console.WriteLine("fill.Text=" + fill.Text.ToString());
 
-
-        }
+}
 ```
 
 ## OpenQuant策略运行的时间驱动机制
@@ -22,10 +34,10 @@ OpenQuant的策略运行机制主要是构造出扑捉市场数据的处理逻�
 ```
 protected override void OnReminder(DateTime dateTime, object data)
 {
-	CheckMyBoxStatus();
-	CheckMyAccountInfo();
-	
-	AddReminder(Clock.DateTime.AddSeconds(3));
+    CheckMyBoxStatus();
+    CheckMyAccountInfo();
+
+    AddReminder(Clock.DateTime.AddSeconds(3));
 }
 ```
 
