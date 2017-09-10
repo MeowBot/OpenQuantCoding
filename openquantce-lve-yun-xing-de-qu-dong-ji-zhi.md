@@ -7,8 +7,7 @@ OpenQuant的策略运行机制主要是构造出扑捉市场数据的处理逻�
 ```
     protected override void OnFill(Fill fill)
         {
-            // Add fill to group.
-            Log(fill, "Fills");
+           fill.Instrument.Exchange
 
 
         }
@@ -16,7 +15,19 @@ OpenQuant的策略运行机制主要是构造出扑捉市场数据的处理逻�
 
 ## OpenQuant策略运行的时间驱动机制
 
-往往很多原因，我们不能只是让策略在被动等待事件，有时候需要进行主动地进行运行某些逻辑，例如对系统及交易进行状态检查，所以我们还需要构造按照时间定时去运行的驱动机制。
+往往很多原因，我们不能只是让策略在被动等待事件，有时候需要进行主动地进行运行某些逻辑，例如，我们需要定时对系统状态及交易进行状态检查，所以我们还需要构造按照时间定时去运行的驱动机制。
 
 使用上述的Reminder事件构造一个循环的定时器即可完成这个功能：
+
+```
+protected override void OnReminder(DateTime dateTime, object data)
+{
+	CheckMyBoxStatus();
+	CheckMyAccountInfo();
+	
+	AddReminder(Clock.DateTime.AddSeconds(3));
+}
+```
+
+
 
