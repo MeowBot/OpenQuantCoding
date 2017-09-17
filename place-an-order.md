@@ -16,3 +16,9 @@
 
 这里的逻辑仅仅是为了使用让OpenQuant高速地发出开仓及平仓单，进行交易功能的验证。总体策略逻辑如下图所示：
 
+![](/assets/FlashOrderStrategyDiagram.png)asdf
+
+
+
+
+
