@@ -310,8 +310,5 @@ namespace OpenQuant
 
 coming soon
 
-  
-
-
-![](blob:file:///f4dff55c-7c76-4f88-b1c3-11921d32d4d9)[https://github.com/omnistep/F](#)lashOrder获得。
+![](blob:file:///f4dff55c-7c76-4f88-b1c3-11921d32d4d9)FlashOrder完整代码可以从[https://github.com/omnistep/F](#)lashOrder获得。
 
