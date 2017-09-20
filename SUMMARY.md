@@ -17,5 +17,5 @@
 * [6. 开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
 * [7. 发出交易指令](place-an-order.md)
 * [附：OpenQuant中的事件类型](the-events-in-openquant.md)
-* [Log Order information using Mysql DB](log-order-information-using-mysql-db.md)
+* [将定单日志记录到Mysql数据库](log-order-information-using-mysql-db.md)
 
