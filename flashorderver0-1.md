@@ -276,3 +276,10 @@ namespace OpenQuant
 
 ![](/assets/FlashOrderFilled.png)
 
+  
+
+
+FlashOrder完整代码可以从
+
+![](/icons/icon_book.png)[https://github.com/omnistep/](#)FlashOrder获得。
+
