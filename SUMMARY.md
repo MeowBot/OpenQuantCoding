@@ -18,6 +18,6 @@
 * [6. 开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
 * [7. 发出交易指令](place-an-order.md)
   * [7.1 建立一个发出交易指令的策略FlashOrder](place-an-order.md#flashorder)
-  * [7.2 FlashOrder的策略逻辑](72.md)
+  * [7.2 FlashOrder的策略逻辑](place-an-order.md#typeoforder)
   * [7.3 FlashOrder的代码v1.0](flashorderver0-1.md)
 
