@@ -19,5 +19,6 @@
 * [7. 发出交易指令](place-an-order.md)
   * [7.1 建立一个发出交易指令的策略FlashOrder](place-an-order.md#flashorder)
   * [7.2 FlashOrder的策略逻辑](place-an-order.md#typeoforder)
-  * [7.3 FlashOrder的代码v1.0](flashorderver_v1.md)
+  * [7.3 FlashOrder的代码 v1](flashorderver_v1.md)
+  * [7.4 将交易记录存入MySQL](log-order-information-using-mysql-db.md)
 

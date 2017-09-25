@@ -1,4 +1,4 @@
-## 7.3 FlashOrder的代码 v1.0
+## 7.3 FlashOrder的代码 v1
 
 FlashOrder策略还是由3个工程组成，Backtest，MyStrategy和Realtime。
 
@@ -275,9 +275,6 @@ namespace OpenQuant
 ![](/icons/icon_labtubeOrg.ico)运行策略后，应该通过OpenQuant自己的OrderManager及CTP通用交易客户终端查看到报单状况。
 
 ![](/assets/FlashOrderFilled.png)
-
-  
-
 
 FlashOrder完整代码可以从
 
