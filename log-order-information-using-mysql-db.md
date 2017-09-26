@@ -213,7 +213,7 @@ namespace OpenQuant
  *      by     :    ww 
  *
  *     //▓▓记录日志 OmniLog.logOrder(StrategyName,OrdId, DateTime.Now,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note)
- *			  
+ *              
  *     select id,date_format(logdatetime,'%Y-%m-%d %H:%i:%s:%f'),strategyname,ordid,date_format(orddatetime,'%Y-%m-%d %H:%i:%s:%f'),symbol,tradeday,side,type,qty,price,status,note  from logorder order by id desc 
  *  
  */
@@ -228,44 +228,48 @@ using SmartQuant;
 
 namespace OpenQuant
 {
-	public class OmniLog 
-	{
-		
-		/// <summary>
-		/// 记录定单 logOrder 
-		/// </summary>
-		/// <param name="OrdId"></param>
-		public static void logOrder(String StrategyName,int OrdId,DateTime OrdDateTime,String Symbol,String Side,String Type,double Qty,double Price,String Status,String Note)
-		{
-			try
-			{
-								
-				string sqlInsert = string.Format("insert into LogOrder(LogDateTime,StrategyName,OrdId,OrdDateTime,Symbol,side,type,qty,price,status,note) values('{0:yyyy-MM-dd HH:mm:ss.fff}','{1}','{2}','{3:yyyy-MM-dd HH:mm:ss.fff}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')",
-					DateTime.Now,StrategyName,OrdId,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note);
-				int row = MysqlMan.ExecuteNonQuery(sqlInsert);				
-				
-				
-			}
-			catch (Exception ex)
-			{
-				String message = ex.Message;
-				Console.WriteLine("数据保存失败了！" + message);
+    public class OmniLog 
+    {
 
-			}
+        /// <summary>
+        /// 记录定单 logOrder 
+        /// </summary>
+        /// <param name="OrdId"></param>
+        public static void logOrder(String StrategyName,int OrdId,DateTime OrdDateTime,String Symbol,String Side,String Type,double Qty,double Price,String Status,String Note)
+        {
+            try
+            {
 
-		}
-		
-		
-        
-	}
+                string sqlInsert = string.Format("insert into LogOrder(LogDateTime,StrategyName,OrdId,OrdDateTime,Symbol,side,type,qty,price,status,note) values('{0:yyyy-MM-dd HH:mm:ss.fff}','{1}','{2}','{3:yyyy-MM-dd HH:mm:ss.fff}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')",
+                    DateTime.Now,StrategyName,OrdId,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note);
+                int row = MysqlMan.ExecuteNonQuery(sqlInsert);                
+
+
+            }
+            catch (Exception ex)
+            {
+                String message = ex.Message;
+                Console.WriteLine("数据保存失败了！" + message);
+
+            }
+
+        }
+
+
+
+    }
 }
-
-
 ```
 
 * ### 第四步-在主策略逻辑中增加日志存储代码
 
-现在我们可以在主策略逻辑中保存报单日志了，报单日志
+现在我们可以在主策略逻辑中保存报单日志了，报单日志保存的调用方法是：
+
+```
+OmniLog.logOrder(StrategyName,OrdId, DateTime.Now,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note)
+```
+
+FlashOrder的主策略
 
 
 
