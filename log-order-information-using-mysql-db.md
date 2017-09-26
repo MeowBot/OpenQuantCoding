@@ -269,9 +269,190 @@ namespace OpenQuant
 OmniLog.logOrder(StrategyName,OrdId, DateTime.Now,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note)
 ```
 
-FlashOrder的主策略
+FlashOrder的主策略代码改为：
+
+```
+using System;
+using System.Drawing;
+using SmartQuant;
+using QuantBox;
+
+namespace OpenQuant
+{
+	public class MyStrategy : InstrumentStrategy
+	{
+		//定义策略名字 StrategyName，将被记录在日志中
+		String StrategyName="FlashOrder";			
+
+		int orderQty = 1; //定义交易定单的发单量多少手
+		int swLongEnable = 1; //定义做多交易许可开关，0：禁止，1：允许
+		int swShortEnable = 1; //定义做空交易许可开关，0：禁止，1：允许
+
+		int theOrdBOid = 0 ; //定义做多△买入开仓定单id
+		int theOrdSCid = 0 ; //定义做多 ▼卖出平仓定单id
+		string theOrdSCstatus = ""; //定义做多 ▼卖出平仓定单状态
+
+		int theOrdSSid = 0 ; //定义做空▽卖出开仓定单id
+		int theOrdBCid = 0 ; //定义做空 ▲买入平仓定单id
+
+		int myCentOpen = -1 ; 	//定义开仓追价成本是多少TickSize；
+		int myCentClose = -1 ; 	//定义平仓追价成本是多少TickSize；
+								//默认1：代表盈利1个TickSize挂单
+								// 0：代表市场平价报单；
+								// -1：代表1个TickSize的成本报单
+
+		public MyStrategy(Framework framework, string name)
+			: base(framework, name)
+		{
+		}
+
+		protected override void OnStrategyStart()
+		{
+			//定义K线的画布，编码0号
+			Group("myK_Chart", "Pad", 0);
+			Group("myK_Chart", "CandleWhiteColor", Color.Red);
+			Group("myK_Chart", "CandleBlackColor", Color.Lime);
+			Group("Fills", "Pad", 0);
+			Group("Equity", "Pad", 1);
+
+		}
+
+		protected override void OnBar(Instrument instrument, Bar bar)
+		{
+			//当Bar形成时，增加bar数据到K线序列
+			Bars.Add(bar);
+
+			//在Bars画布上画出K线
+			Log(bar, "myK_Chart");
+
+			// Calculate performance.
+			Portfolio.Performance.Update();
+			// 在画布上绘制权益曲线
+			Log(Portfolio.Value, "Equity");
 
 
+
+			//就是这句期待已久的HelloWorld！同时显示bar时间，合约代码，bar中的均价
+			Console.WriteLine("OnBar------HelloWorld! "+bar.DateTime.ToString()+ " "+instrument.Symbol + " ="+bar.Average.ToString());
+			Console.WriteLine("swLongEnable= "+swLongEnable.ToString()+ "; swShortEnable ="+swShortEnable.ToString());
+			//显示平仓单状态
+			System.Console.WriteLine("theOrdSCstatus = " + theOrdSCstatus);
+
+			if(swLongEnable==1)
+			{
+				//买入-开仓
+				Order orderBO = BuyLimitOrder(Instrument, orderQty, bar.Close - myCentOpen*Instrument.TickSize, "△");
+				//orderBO.Open();
+				Send(orderBO);
+
+				//▓▓记录日志OmniLog.logOrder(StrategyName,OrdId,DateTime.Now,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note)
+				OmniLog.logOrder(StrategyName,orderBO.Id,orderBO.DateTime,orderBO.Instrument.Symbol,orderBO.Side.ToString() ,orderBO.Type.ToString() ,orderBO.Qty,orderBO.Price,orderBO.Status.ToString() ,"△");
+				
+				
+				swLongEnable = 0;
+				theOrdBOid = orderBO.Id;
+
+			}
+
+
+			if(swShortEnable==1)
+			{
+				//卖出-开仓
+				Order orderSS = SellLimitOrder(Instrument, orderQty, bar.Close + myCentOpen*Instrument.TickSize, "▽");
+				//orderSS.Open();
+				Send(orderSS);
+
+				//▓▓记录日志OmniLog.logOrder(StrategyName,OrdId,DateTime.Now,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note)
+				OmniLog.logOrder(StrategyName,orderSS.Id ,orderSS.DateTime,orderSS.Instrument.Symbol,orderSS.Side.ToString() ,orderSS.Type.ToString() ,orderSS.Qty,orderSS.Price,orderSS.Status.ToString() ,"▽");
+
+				
+				swShortEnable = 0;
+				theOrdSSid = orderSS.Id;
+
+			}
+
+
+		}
+
+		protected override void OnFill(SmartQuant.Fill fill)
+		{
+			// 在画布上绘制成交记录
+			Log(fill, "Fills");
+
+
+			// 在Output窗口中输出fill对象的当前数据...
+			System.Console.WriteLine("fill.DateTime=" + fill.DateTime.ToString());
+			System.Console.WriteLine("fill.CashFlow=" + fill.CashFlow.ToString());
+			System.Console.WriteLine("fill.Commission=" + fill.Commission.ToString());
+			System.Console.WriteLine("fill.Instrument.Symbol=" + fill.Instrument.Symbol.ToString());
+			System.Console.WriteLine("fill.Instrument.Description=" + fill.Instrument.Description.ToString());
+			System.Console.WriteLine("fill.Instrument.Trade=" + fill.Instrument.Trade.ToString());
+			System.Console.WriteLine("fill.Text=" + fill.Text.ToString());
+
+			//▓▓记录日志OmniLog.logOrder(StrategyName,OrdId, DateTime.Now,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note)
+			OmniLog.logOrder(StrategyName,fill.Order.Id ,fill.DateTime,fill.Instrument.Symbol,fill.Side.ToString() ,fill.Order.Type.ToString() ,fill.Qty,fill.Price,fill.Order.Status.ToString() ,"挂单成交");
+
+
+
+			if(fill.Order.Id == theOrdBOid)
+			{
+				//卖出-平仓
+				Order orderSC = SellLimitOrder(Instrument, orderQty, fill.Price + myCentClose*Instrument.TickSize, "▼");
+				orderSC.CloseToday() ;
+				Send(orderSC);
+
+				theOrdSCid = orderSC.Id;
+				theOrdSCstatus = orderSC.Status.ToString();
+
+				swLongEnable = 1;
+				
+				//▓▓记录日志OmniLog.logOrder(StrategyName,OrdId, DateTime.Now,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note)
+				OmniLog.logOrder(StrategyName,orderSC.Id ,orderSC.DateTime,orderSC.Instrument.Symbol,orderSC.Side.ToString() ,orderSC.Type.ToString() ,orderSC.Qty,orderSC.Price,orderSC.Status.ToString() ,"▼");
+
+			}
+
+			if(fill.Order.Id == theOrdSSid)
+			{
+				//买入-平仓
+				Order orderBC = BuyLimitOrder(Instrument, orderQty, fill.Price - myCentClose*Instrument.TickSize, "▲");
+				orderBC.CloseToday();
+				Send(orderBC);
+				System.Console.WriteLine("▓orderBC.SubSide=" + orderBC.SubSide.ToString());
+
+				theOrdBCid = orderBC.Id;
+
+				swShortEnable = 1;
+				
+				//▓▓记录日志OmniLog.logOrder(StrategyName,OrdId, DateTime.Now,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note)
+				OmniLog.logOrder(StrategyName,orderBC.Id ,orderBC.DateTime,orderBC.Instrument.Symbol,orderBC.Side.ToString() ,orderBC.Type.ToString() ,orderBC.Qty,orderBC.Price,orderBC.Status.ToString() ,"▲");
+		
+			}
+
+
+
+			if(fill.Order.Id == theOrdSCid)
+			{
+				swLongEnable = 1;
+			}
+
+			if(fill.Order.Id == theOrdBCid)
+			{
+				swShortEnable = 1;
+			}
+
+		}
+
+
+	}
+	
+}
+
+
+
+
+
+
+```
 
 * ### 第五步-使用MySQL工具进行查看及监控
 
