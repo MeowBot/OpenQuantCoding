@@ -62,150 +62,214 @@ using MySql.Data.MySqlClient;
 
 namespace OpenQuant
 {
-	class MysqlMan
-	{
+    class MysqlMan
+    {
 
 
-		/// <summary>
-		/// 建立mysql数据库链接
-		/// </summary>
-		/// <returns></returns>
-		public static MySqlConnection getMySqlCon()
-		{
-			String mysqlStrQBMD = "";
-			//Mysql Server at Lab
-			mysqlStrQBMD = "Database=MySQL01;Data Source=127.0.0.1;User Id=root;Password=yourPassword;pooling=false;CharSet=utf8;port=3306;Allow Zero Datetime=True";
-			//MySQL Server at Home
-			//mysqlStrQBMD = "Database=MySQL02;Data Source=127.0.0.1;User Id=root;Password=yourPassword;pooling=false;CharSet=utf8;port=3306;Allow Zero Datetime=True";
-            
-
-
-			MySqlConnection mysql = new MySqlConnection(mysqlStrQBMD);
-			return mysql;
-		}
-
-		/// <summary>
-		/// 建立执行命令语句对象
-		/// </summary>
-		/// <param name="sql"></param>
-		/// <param name="mysql"></param>
-		/// <returns></returns>
-		public static MySqlCommand getSqlCommand(String sql, MySqlConnection mysql)
-		{
-			MySqlCommand mySqlCommand = new MySqlCommand(sql, mysql);
-			return mySqlCommand;
-		}
-
-		/// <summary>
-		/// 添加数据
-		/// </summary>
-		/// <param name="mySqlCommand"></param>
-		public static void getInsert(MySqlCommand mySqlCommand)
-		{
-			try
-			{
-				mySqlCommand.ExecuteNonQuery();
-			}
-			catch (Exception ex)
-			{
-				String message = ex.Message;
-				Console.WriteLine("插入数据失败了！" + message);
-
-			}
-
-		}
-
-		/// <summary>
-		/// 删除数据
-		/// </summary>
-		/// <param name="mySqlCommand"></param>
-		public static void getDel(MySqlCommand mySqlCommand)
-		{
-			try
-			{
-				mySqlCommand.ExecuteNonQuery();
-			}
-			catch (Exception ex)
-			{
-				String message = ex.Message;
-				Console.WriteLine("删除数据失败了！" + message);
-			}
-		}
-
-		/// <summary>
-		/// 修改数据
-		/// </summary>
-		/// <param name="mySqlCommand"></param>
-		public static void getUpdate(MySqlCommand mySqlCommand)
-		{
-			try
-			{
-				mySqlCommand.ExecuteNonQuery();
-			}
-			catch (Exception ex)
-			{
-
-				String message = ex.Message;
-				Console.WriteLine("修改数据失败了！" + message);
-			}
-		}
+        /// <summary>
+        /// 建立mysql数据库链接
+        /// </summary>
+        /// <returns></returns>
+        public static MySqlConnection getMySqlCon()
+        {
+            String mysqlStrQBMD = "";
+            //Mysql Server at Lab
+            mysqlStrQBMD = "Database=MySQL01;Data Source=127.0.0.1;User Id=root;Password=yourPassword;pooling=false;CharSet=utf8;port=3306;Allow Zero Datetime=True";
+            //MySQL Server at Home
+            //mysqlStrQBMD = "Database=MySQL02;Data Source=127.0.0.1;User Id=root;Password=yourPassword;pooling=false;CharSet=utf8;port=3306;Allow Zero Datetime=True";
 
 
 
-		public static int ExecuteNonQuery(string sql) 
-		{
-			MySqlConnection mysql = null;
-			try
-			{
-				mysql = getMySqlCon();
-				mysql.Open();
-				MySqlCommand mySqlCommand = new MySqlCommand(sql, mysql);
-				int result = mySqlCommand.ExecuteNonQuery();
-				mysql.Close();
-				return result;
-			}
-			catch (Exception ex)
-			{
-				if (mysql != null && mysql.State != System.Data.ConnectionState.Closed)
-					mysql.Close();
-				String message = ex.Message;
-				Console.WriteLine("ExecuteNonQuery失败了！" + message);
-				return 0;
-			}
-		}
+            MySqlConnection mysql = new MySqlConnection(mysqlStrQBMD);
+            return mysql;
+        }
 
-		public static object ExecuteScalar(string sql) 
-		{
-			MySqlConnection mysql=null;
-			try
-			{
-				mysql = getMySqlCon();
-				MySqlCommand mySqlCommand = new MySqlCommand(sql, mysql);
-				mysql.Open();
-				object result = mySqlCommand.ExecuteScalar();
-				mysql.Close();
-				return result;
+        /// <summary>
+        /// 建立执行命令语句对象
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="mysql"></param>
+        /// <returns></returns>
+        public static MySqlCommand getSqlCommand(String sql, MySqlConnection mysql)
+        {
+            MySqlCommand mySqlCommand = new MySqlCommand(sql, mysql);
+            return mySqlCommand;
+        }
 
-			}
-			catch (Exception ex)
-			{
-				if(mysql!=null && mysql.State != System.Data.ConnectionState.Closed)
-					mysql.Close();
-				String message = ex.Message;
-				Console.WriteLine("ExecuteNonQuery失败了！" + message);
-				return null;
-			}
-		}
-	}
+        /// <summary>
+        /// 添加数据
+        /// </summary>
+        /// <param name="mySqlCommand"></param>
+        public static void getInsert(MySqlCommand mySqlCommand)
+        {
+            try
+            {
+                mySqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                String message = ex.Message;
+                Console.WriteLine("插入数据失败了！" + message);
+
+            }
+
+        }
+
+        /// <summary>
+        /// 删除数据
+        /// </summary>
+        /// <param name="mySqlCommand"></param>
+        public static void getDel(MySqlCommand mySqlCommand)
+        {
+            try
+            {
+                mySqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                String message = ex.Message;
+                Console.WriteLine("删除数据失败了！" + message);
+            }
+        }
+
+        /// <summary>
+        /// 修改数据
+        /// </summary>
+        /// <param name="mySqlCommand"></param>
+        public static void getUpdate(MySqlCommand mySqlCommand)
+        {
+            try
+            {
+                mySqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                String message = ex.Message;
+                Console.WriteLine("修改数据失败了！" + message);
+            }
+        }
+
+
+
+        public static int ExecuteNonQuery(string sql) 
+        {
+            MySqlConnection mysql = null;
+            try
+            {
+                mysql = getMySqlCon();
+                mysql.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand(sql, mysql);
+                int result = mySqlCommand.ExecuteNonQuery();
+                mysql.Close();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                if (mysql != null && mysql.State != System.Data.ConnectionState.Closed)
+                    mysql.Close();
+                String message = ex.Message;
+                Console.WriteLine("ExecuteNonQuery失败了！" + message);
+                return 0;
+            }
+        }
+
+        public static object ExecuteScalar(string sql) 
+        {
+            MySqlConnection mysql=null;
+            try
+            {
+                mysql = getMySqlCon();
+                MySqlCommand mySqlCommand = new MySqlCommand(sql, mysql);
+                mysql.Open();
+                object result = mySqlCommand.ExecuteScalar();
+                mysql.Close();
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                if(mysql!=null && mysql.State != System.Data.ConnectionState.Closed)
+                    mysql.Close();
+                String message = ex.Message;
+                Console.WriteLine("ExecuteNonQuery失败了！" + message);
+                return null;
+            }
+        }
+    }
 }
-
 ```
 
 * ### 第三步-编写日志存储功能OmniLog.cs
 
-在FlashOrder解决方案的MyStrategy工程中，
+在FlashOrder解决方案的MyStrategy工程中，增加日志存储功能OmniLog.cs文件，该文件负责提供报单日志存储方法，以便策略中可以方便地调用，保存报单日志，OmniLog.cs的代码如下：
+
+```
+/*
+ *      Purpose:    OmniLog   
+ *      
+ *      version:    1.0.0 
+ *      create :    2017/09/19 
+ *      by     :    ww 
+ *
+ *     //▓▓记录日志 OmniLog.logOrder(StrategyName,OrdId, DateTime.Now,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note)
+ *			  
+ *     select id,date_format(logdatetime,'%Y-%m-%d %H:%i:%s:%f'),strategyname,ordid,date_format(orddatetime,'%Y-%m-%d %H:%i:%s:%f'),symbol,tradeday,side,type,qty,price,status,note  from logorder order by id desc 
+ *  
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using SmartQuant;
+
+namespace OpenQuant
+{
+	public class OmniLog 
+	{
+		
+		/// <summary>
+		/// 记录定单 logOrder 
+		/// </summary>
+		/// <param name="OrdId"></param>
+		public static void logOrder(String StrategyName,int OrdId,DateTime OrdDateTime,String Symbol,String Side,String Type,double Qty,double Price,String Status,String Note)
+		{
+			try
+			{
+								
+				string sqlInsert = string.Format("insert into LogOrder(LogDateTime,StrategyName,OrdId,OrdDateTime,Symbol,side,type,qty,price,status,note) values('{0:yyyy-MM-dd HH:mm:ss.fff}','{1}','{2}','{3:yyyy-MM-dd HH:mm:ss.fff}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')",
+					DateTime.Now,StrategyName,OrdId,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note);
+				int row = MysqlMan.ExecuteNonQuery(sqlInsert);				
+				
+				
+			}
+			catch (Exception ex)
+			{
+				String message = ex.Message;
+				Console.WriteLine("数据保存失败了！" + message);
+
+			}
+
+		}
+		
+		
+        
+	}
+}
 
 
+```
+
+* ### 第四步-在主策略逻辑中增加日志存储代码
+
+现在我们可以在主策略逻辑中保存报单日志了，报单日志
+
+
+
+* ### 第五步-使用MySQL工具进行查看及监控
 
 通过Mysql的Workbench工具可以监控数据库的状态，Dashboard工具如下图所示：
 
