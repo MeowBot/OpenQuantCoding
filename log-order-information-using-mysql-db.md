@@ -34,11 +34,9 @@
     AUTO_INCREMENT=72969
     ;
 
-
-
 * ### 第二步-在策略工程中引入MySQL的DLL库及建立MySQL访问代码
 
-在FlashOrder解决方案的在MyStrategy工程中，先引入Mysql的库：MySql.Data.dll 。这个动态链接库文件你可以在OpenQuant的安装目录中即可以找到，或者在MySQL的安装目录中也可以找到。
+在FlashOrder解决方案的在MyStrategy工程中，先引入Mysql的.NET驱动库：**MySql.Data.dll** 。这个动态链接库文件你可以在MySQL的安装目录中也可以找到。
 
 再在MyStrategy工程中增加MySQL访问功能的公共方法代码，文件名MysqlMan.cs ，该文件代码如下：
 
