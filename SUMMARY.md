@@ -22,4 +22,5 @@
   * [7.3 FlashOrder的代码 v1](flashorderver_v1.md)
   * [7.4 将交易记录存入MySQL](log-order-information-using-mysql-db.md)
   * [7.5 同时处理多个合约 FlashOrder v2](flashorderver_v2.md)
+* [8.一个基础的策略](8_a-basic-strategy.md)
 
