@@ -1,6 +1,6 @@
 ## 7.3 FlashOrder的逻辑代码
 
-FlashOrder策略还是由3个工程组成，Backtest，MyStrategy和Realtime。
+FlashOrder策略还是由3个工程组成，Backtest，MyStrategy和Realtime。 
 
 其中Backtest工程中的MyScenario.cs代码为：
 
