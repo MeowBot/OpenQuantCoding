@@ -10,11 +10,12 @@
 
 在Visual Studio中，可以方便地对，Solutions，Project，类库等等代码文件方便地进行重命名。
 
-![](/icons/icon_labtubeBlue.ico)现在我们以FlashOrder为基础，形成一个新的策略LinesCrossover，开始尝试开发一个真正的交易策略。
+![](/icons/icon_labtubeBlue.ico)现在我们以FlashOrder为基础，形成一个新的策略LinesCrossover，开始尝试开发一个真正的交易策略。注意修改主策略代码中的日志标识，以便在未来交易日志中区分新的策略命名和原有的策略命名。
 
-
-
-
+```
+		//定义策略名字 StrategyName，将被记录在日志中
+		String StrategyName="FlashOrder要改成LinesCrossover";
+```
 
 
 
