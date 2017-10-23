@@ -152,6 +152,16 @@ namespace OpenQuant
         // 在画布上绘制权益曲线
         Log(Portfolio.Value, "Equity");
 
+
+        // Log sma.在画布上画出三条均线，如果尚未产生SMA数据时，跳出事件过程，不做处理
+        if (sma1.Count == 0 || sma2.Count == 0 || sma3.Count == 0)
+            return;
+
+        Log(sma1.Last, "SMA1");
+        Log(sma2.Last, "SMA2");
+        Log(sma3.Last, "SMA3");
+
+
         ... ... 
         (... 略去一段指标计算代码，结果是计算indicatorCross数值)
 
@@ -164,17 +174,8 @@ namespace OpenQuant
         Log(indicatorTrend, "IndicatorTrend");
 
         ...  其他逻辑
-        
-        // Log sma.在画布上画出三条均线，如果尚未产生SMA数据时，跳出事件过程，不做处理
-        if (sma1.Count == 0 || sma2.Count == 0 || sma3.Count == 0)
-            return;
 
-        Log(sma1.Last, "SMA1");
-        Log(sma2.Last, "SMA2");
-        Log(sma3.Last, "SMA3");
-        
     }
-    
 ```
 
 这样我们绘制的图像如下：
