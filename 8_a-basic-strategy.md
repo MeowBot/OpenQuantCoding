@@ -17,5 +17,7 @@
         String StrategyName="FlashOrder要改成LinesCrossover";
 ```
 
+![](/icons/icon_paw.png)借助Vistual Studio工具，可以快速地基于一个基础的C\#解决方案代码，生成一个新的解决方案。
+
 
 
