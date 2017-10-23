@@ -12,11 +12,7 @@
 
 我们把这个交易策略命名为FlashOrder
 
-
-
 ![](/icons/icon_labtubeBlue.ico)使用OpenQuant系统建立一个新的策略，并命名为FlashOrder
-
-
 
 ## 7.2 FlashOrder的策略逻辑 {#typeoforder}
 

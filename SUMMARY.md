@@ -23,7 +23,5 @@
   * [7.4 将交易记录存入MySQL](log-order-information-using-mysql-db.md)
   * [7.5 同时处理多个合约 FlashOrder v2](flashorderver_v2.md)
 * [8.一个基础的策略](8_a-basic-strategy.md)
-  * [8.1\_LinesCrossover Strategy](81linescrossover-strategy.md)
-
-
-
+  * [8.1\_LinesCrossover Strategy](81_linescrossover-strategy.md)
+  * [8.2\_使用OpenQuant的画图功能](82_using-drawing-pad.md)
