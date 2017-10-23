@@ -147,15 +147,6 @@ namespace OpenQuant
         //在Bars画布上画出K线
         Log(bar, "myK_Chart");
 
-
-        // Log sma.
-        if (sma1.Count == 0 || sma2.Count == 0 || sma3.Count == 0)
-           return;
-           
-        Log(sma1.Last, "SMA1");
-        Log(sma2.Last, "SMA2");
-        Log(sma3.Last, "SMA3");        
-
         // Calculate performance.
         Portfolio.Performance.Update();
         // 在画布上绘制权益曲线
@@ -173,6 +164,17 @@ namespace OpenQuant
         Log(indicatorTrend, "IndicatorTrend");
 
         ...  其他逻辑
+        
+        // Log sma.在画布上画出三条均线，如果尚未产生SMA数据时，跳出事件过程，不做处理
+        if (sma1.Count == 0 || sma2.Count == 0 || sma3.Count == 0)
+            return;
+
+        Log(sma1.Last, "SMA1");
+        Log(sma2.Last, "SMA2");
+        Log(sma3.Last, "SMA3");
+        
+    }
+    
 ```
 
 这样我们绘制的图像如下：
