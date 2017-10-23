@@ -1,4 +1,4 @@
-# 7.5 使用OpenQuant的画图功能
+# 8.2 使用OpenQuant的画图功能
 
 ---
 
@@ -19,12 +19,12 @@ namespace OpenQuant
 {
     public partial class Backtest : Scenario
     {
-		
-		//定义K线时间周期为barSize秒
-		private long secBarSize =3;
-		private long min1BarSize=60;
-		
-		
+
+        //定义K线时间周期为barSize秒
+        private long secBarSize =3;
+        private long min1BarSize=60;
+
+
         public Backtest(Framework framework)
             : base(framework)
         {
@@ -32,110 +32,147 @@ namespace OpenQuant
 
         public override void Run()
         {
-			
-			//定义要引入的合约名字
-			Instrument instrument1 = InstrumentManager.Instruments["i1801"];
-			
-			
-            strategy = new MyStrategy(framework, "Backtest");
-			
-			
-			//引入合约
-			strategy.AddInstrument(instrument1);
-			
-			//定义数据回测的起止日期
-			DataSimulator.SubscribeBar = false;
-			DataSimulator.DateTime1 = new DateTime(2017, 10, 13);
-			DataSimulator.DateTime2 = new DateTime(2017, 10, 15); //  data from 09-01 to 09-30
 
-			//定义一个时间类型的K线
-			BarFactory.Clear();
-			BarFactory.Add(instrument1, BarType.Time, secBarSize);	
-			
-			BarFactory.Add(instrument1, BarType.Time, min1BarSize);	
-			
-			Initialize();
-			
+            //定义要引入的合约名字
+            Instrument instrument1 = InstrumentManager.Instruments["i1801"];
+
+
+            strategy = new MyStrategy(framework, "Backtest");
+
+
+            //引入合约
+            strategy.AddInstrument(instrument1);
+
+            //定义数据回测的起止日期
+            DataSimulator.SubscribeBar = false;
+            DataSimulator.DateTime1 = new DateTime(2017, 10, 13);
+            DataSimulator.DateTime2 = new DateTime(2017, 10, 15); //  data from 09-01 to 09-30
+
+            //定义一个时间类型的K线
+            BarFactory.Clear();
+            BarFactory.Add(instrument1, BarType.Time, secBarSize);    
+
+            BarFactory.Add(instrument1, BarType.Time, min1BarSize);    
+
+            Initialize();
+
             StartStrategy();
         }
     }
 }
-
 ```
 
 然后在主策略文件中的定义画布的参数和绘制，MyStrategy.cs的代码片段如下：
 
 ```
-	... ... 
-	public class MyStrategy : InstrumentStrategy
-	{
-		//定义策略名字 StrategyName，将被记录在日志中
-		String StrategyName="LinesCrossover";			
+    ... ... 
+    public class MyStrategy : InstrumentStrategy
+    {
+        //定义策略名字 StrategyName，将被记录在日志中
+        String StrategyName="LinesCrossover";            
 
-		//定义SMA对象
-		private SMA sma1;
-		private SMA sma2;
-		private SMA sma3;
-		
-	        public int sma1Length = 20;
-        	public int sma2Length = 60;
-	        public int sma3Length = 80;
-		
-		... 
-		
-		
-		
-		protected override void OnStrategyStart()
-		{
-			// Set up indicators.
-			sma1 = new SMA(Bars, sma1Length);
-			sma2 = new SMA(Bars, sma2Length);
-			sma3 = new SMA(Bars, sma3Length);		
-			
-			
-			//定义K线的画布，编码0号
-			//颜色变量--------------------------------------------
-			//Azure:天蓝色; Aquamarine:蓝晶色; Bisque:浓汤;
-			//Beige:米色; BlanchedAlmond:杏仁白;BlueViolet:蓝紫;
-			
-			Group("myK_Chart", "Pad", 0);
-			Group("myK_Chart", "CandleWhiteColor", Color.Red);
-			Group("myK_Chart", "CandleBlackColor", Color.Lime);
-			Group("Fills", "Pad", 0);
-			
-					
-			Group("SMA1", "Pad", 0);
-			Group("SMA1", "Color", Color.DodgerBlue);
-			
-			Group("SMA2", "Pad", 0);
-			Group("SMA2","Width",2);
-			Group("SMA2", "Color", Color.Red);
+        //定义SMA对象
+        private SMA sma1;
+        private SMA sma2;
+        private SMA sma3;
 
-			Group("SMA3", "Pad", 0);
-			Group("SMA3","Width",2);
-			Group("SMA3", "Color", Color.DarkRed);		
-			
-			//定义指标的画布，编码1、2号
-			Group("IndicatorCross", "Pad", 1);	
-			Group("IndicatorCross","Width",2);
-			Group("IndicatorCross", "Color", Color.DarkOrange);		
-			
-			Group("IndicatorTrend", "Pad", 2);	
-			Group("IndicatorTrend","Width",2);
-			Group("IndicatorTrend", "Color", Color.DodgerBlue);		
-					
-			
-			
-			//定义权益曲线的画布，编码3号
-			Group("Equity", "Pad", 3);
-			
-			Group("minK_Chart", "Pad", 4);
-			Group("minK_Chart", "CandleWhiteColor", Color.Red);
-			Group("minK_Chart", "CandleBlackColor", Color.Lime);
-		}
-		
-		
+            public int sma1Length = 20;
+            public int sma2Length = 60;
+            public int sma3Length = 80;
+
+        ... 
+
+
+
+        protected override void OnStrategyStart()
+        {
+            // Set up indicators.
+            sma1 = new SMA(Bars, sma1Length);
+            sma2 = new SMA(Bars, sma2Length);
+            sma3 = new SMA(Bars, sma3Length);        
+
+
+            //定义K线的画布，编码0号
+            //颜色变量--------------------------------------------
+            //Azure:天蓝色; Aquamarine:蓝晶色; Bisque:浓汤;
+            //Beige:米色; BlanchedAlmond:杏仁白;BlueViolet:蓝紫;
+
+            Group("myK_Chart", "Pad", 0);
+            Group("myK_Chart", "CandleWhiteColor", Color.Red);
+            Group("myK_Chart", "CandleBlackColor", Color.Lime);
+            Group("Fills", "Pad", 0);
+
+
+            Group("SMA1", "Pad", 0);
+            Group("SMA1", "Color", Color.DodgerBlue);
+
+            Group("SMA2", "Pad", 0);
+            Group("SMA2","Width",2);
+            Group("SMA2", "Color", Color.Red);
+
+            Group("SMA3", "Pad", 0);
+            Group("SMA3","Width",2);
+            Group("SMA3", "Color", Color.DarkRed);        
+
+            //定义指标的画布，编码1、2号
+            Group("IndicatorCross", "Pad", 1);    
+            Group("IndicatorCross","Width",2);
+            Group("IndicatorCross", "Color", Color.DarkOrange);        
+
+            Group("IndicatorTrend", "Pad", 2);    
+            Group("IndicatorTrend","Width",2);
+            Group("IndicatorTrend", "Color", Color.DodgerBlue);        
+
+
+
+            //定义权益曲线的画布，编码3号
+            Group("Equity", "Pad", 3);
+
+            //定义分钟K线，使用编码4的画布
+            Group("minK_Chart", "Pad", 4);
+            Group("minK_Chart", "CandleWhiteColor", Color.Red);
+            Group("minK_Chart", "CandleBlackColor", Color.Lime);
+        }
 ```
 
+在OnBar事件发生时，我们绘制K线和三条不同周期的均线 ,代码片段如下：
 
+```
+    protected override void OnBar(Instrument instrument, Bar bar)
+    {
+
+        //当Bar形成时，增加bar数据到K线序列
+        Bars.Add(bar);
+
+        //在Bars画布上画出K线
+        Log(bar, "myK_Chart");
+
+
+        // Log sma.
+        Log(sma1.Last, "SMA1");
+        Log(sma2.Last, "SMA2");
+        Log(sma3.Last, "SMA3");        
+
+        // Calculate performance.
+        Portfolio.Performance.Update();
+        // 在画布上绘制权益曲线
+        Log(Portfolio.Value, "Equity");
+
+        ... ... 
+        (... 略去一段指标计算代码，结果是计算indicatorCross数值)
+
+        //绘制指标indicatorCross    
+        Log(indicatorCross, "IndicatorCross");    
+
+        (... 略去一段指标计算代码，结果是计算indicatorTrend数值)    
+
+        //绘制指标indicatorTrend
+        Log(indicatorTrend, "IndicatorTrend");
+
+        ...  其他逻辑
+```
+
+这样我们绘制的图像如下：
+
+![](/assets/UsingDrawingPad01.png)
 
