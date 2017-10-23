@@ -149,6 +149,9 @@ namespace OpenQuant
 
 
         // Log sma.
+        if (sma1.Count == 0 || sma2.Count == 0 || sma3.Count == 0)
+           return;
+           
         Log(sma1.Last, "SMA1");
         Log(sma2.Last, "SMA2");
         Log(sma3.Last, "SMA3");        
