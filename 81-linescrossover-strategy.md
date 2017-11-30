@@ -18,7 +18,7 @@
 
 上述完整LinesCrossover代码可以从如下地址获得：
 
-![](/icons/icon_book.png) [https://github.com/omnistep/](https://github.com/omnistep/OpenQuantHelloWorld)LinesCrossover 获得。
+![](/icons/icon_book.png) [https://github.com/omnistep/](https://github.com/omnistep/OpenQuantHelloWorld)LinesCrossover 获得。 
 
 ## 策略的运行
 
