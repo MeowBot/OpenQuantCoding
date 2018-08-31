@@ -1,4 +1,4 @@
-# 8.2 使用OpenQuant的画图功能
+# 8.使用OpenQuant的画图功能
 
 ---
 
