@@ -36,6 +36,10 @@
 
 ![](/icons/icon_bookbig.png)详见[http://www.smartquant.cn/book/installing.html](http://www.smartquant.cn/book/installing.html)
 
+
+
+或者下载集成了交易、行情、历史数据插件的天风版OpenQuant
+
 ## 1.4 配置插件让OpenQuant接入市场 {#configplugins}
 
 ---
