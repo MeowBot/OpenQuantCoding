@@ -22,7 +22,7 @@
   * [7.3 FlashOrder的代码 v1](flashorderver_v1.md)
   * [7.4 将交易记录存入MySQL](log-order-information-using-mysql-db.md)
   * [7.5 同时处理多个合约 FlashOrder v2](flashorderver_v2.md)
-  * [8.构架一个的基础策略模版](8gou-jia-yi-ge-de-ji-chu-ce-lve-mo-ban.md)
+  * [8 构建一个策略的空模板](buildemptytemplate.md)
   * [9. 使用OpenQuant的画图功能](82-using-drawing-pad.md)
 * [10.一个基础的策略](8_a-basic-strategy.md)
   * [10.1 三均线穿越系统](81-linescrossover-strategy.md)
