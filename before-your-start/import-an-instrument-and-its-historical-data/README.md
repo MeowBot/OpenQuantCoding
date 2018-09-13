@@ -1,6 +1,4 @@
-# 1.2 OpenQuant产品的选择
-
-
+# 1.2 OpenQuant商业版与天风版
 
 
 
