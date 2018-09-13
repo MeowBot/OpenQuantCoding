@@ -1,15 +1,15 @@
-# Table of contents
+# Summary
 
 * [序言Introduction](README.md)
 * [1. 在开始之前的准备](before-your-start/README.md)
   * [1.1 操作系统的选择](before-your-start/1.1-cao-zuo-xi-tong-de-xuan-ze.md)
+  * [1.5 使用OpenQuant导入合约及历史数据](before-your-start/import-an-instrument-and-its-historical-data/README.md)
   * [1.2 下载OpenQuant及插件](before-your-start/1.2-xia-zai-openquant-ji-cha-jian.md)
   * [1.3 安装OpenQuant及插件](before-your-start/1.3-an-zhuang-openquant-ji-cha-jian.md)
   * [1.4 配置插件接入市场](before-your-start/1.4-pei-zhi-cha-jian-jie-ru-shi-chang.md)
-  * [1.5 使用OpenQuant导入合约及历史数据](before-your-start/import-an-instrument-and-its-historical-data/README.md)
-    * [使用ThanfData插件](before-your-start/import-an-instrument-and-its-historical-data/shi-yong-thanfdata-cha-jian.md)
-    * [导入合约信息](before-your-start/import-an-instrument-and-its-historical-data/dao-ru-he-yue-xin-xi.md)
-    * [导入历史数据](before-your-start/import-an-instrument-and-its-historical-data/dao-ru-li-shi-shu-ju.md)
+  * [OpenQuant天风版软件安装配置快速指南](before-your-start/import-an-instrument-and-its-historical-data/shi-yong-thanfdata-cha-jian.md)
+  * [导入合约信息](before-your-start/import-an-instrument-and-its-historical-data/dao-ru-he-yue-xin-xi.md)
+  * [导入历史数据](before-your-start/import-an-instrument-and-its-historical-data/dao-ru-li-shi-shu-ju.md)
 * [2. 管理未来所有的代码...](manage-your-coding-by-svn.md)
 * [3. OpenQuant策略代码的结构](structure-of-openquant-solution.md)
 * [4. 策略运行的事件驱动和定时驱动机制](4.-ce-lve-yun-hang-de-shi-jian-qu-dong-he-ding-shi-qu-dong-ji-zhi/README.md)
