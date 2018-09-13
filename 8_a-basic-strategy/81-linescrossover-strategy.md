@@ -1,6 +1,4 @@
-# 8.1 三均线穿越系统
-
----
+# 10.1 三均线穿越系统
 
 使用OpenQuant开发策略一般可以分为：数据或交易思路研究，策略结构设计，策略编码，策略回测，策略优化，交易监控等环节。
 
@@ -18,11 +16,11 @@
 
 上述完整LinesCrossover代码可以从如下地址获得：
 
-![](/icons/icon_book.png) [https://github.com/omnistep/](https://github.com/omnistep/OpenQuantHelloWorld)LinesCrossover 获得。 
+![](../.gitbook/assets/icon_book.png) [https://github.com/omnistep/](https://github.com/omnistep/OpenQuantHelloWorld)LinesCrossover 获得。
 
 ## 策略的运行
 
 策略运行效果如下图所示，可以看出策略是现金绞肉机。
 
-![](/assets/LinesCrossoverShow.png)ComingSoon...
+![](../.gitbook/assets/linescrossovershow.png)ComingSoon...
 

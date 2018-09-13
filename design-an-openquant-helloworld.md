@@ -1,6 +1,4 @@
-# 设计一个OpenQuant的HelloWorld！
-
----
+# 5. 设计一个OpenQuant的HelloWorld！
 
 在对OpenQuant的代码结构和驱动机制有了大致的了解后，让我们来开始搞一个OpenQuant的HelloWorld系统吧...
 
@@ -12,14 +10,12 @@
 
 总体代码结构应该是这样的：
 
-![](/assets/design_helloworld.jpg)
+![](.gitbook/assets/design_helloworld.jpg)
 
 整个解决方案由三个工程组成：
 
 1. 回测场景定义的**Backtest**：主要定义用于回测的合约，及其历史数据的回测时间段；
-
 2. 实盘场景定义的**Realtime**：主要定义交易通道，实盘交易的合约。
-
 3. 策略主体的**MyStrategy**：主要编写策略逻辑，我们的Hellow World代码就会出现在这里。
 
 而优化（Optimization）的部分，目前先忽略。现在就来创建这个HelloWorld吧！

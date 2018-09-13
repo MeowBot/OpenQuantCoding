@@ -1,10 +1,10 @@
-## 7.3 FlashOrder的逻辑代码
+# 7.3 FlashOrder的代码 v1
 
-FlashOrder策略还是由3个工程组成，Backtest，MyStrategy和Realtime。 
+FlashOrder策略还是由3个工程组成，Backtest，MyStrategy和Realtime。
 
 其中Backtest工程中的MyScenario.cs代码为：
 
-```
+```text
 using System;
 
 using SmartQuant;
@@ -55,7 +55,7 @@ namespace OpenQuant
 
 Realtime工程中的Scenario.cs代码为：
 
-```
+```text
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -109,7 +109,7 @@ namespace OpenQuant
 
 而MyStrategy工程中先要引入QuantBox.OQ.dll, 该文件安装QuantBoxCTP插件后，可以在OpenQuant默认安装路径中找到。MyStrategy.cs代码为：
 
-```
+```text
 using System;
 using System.Drawing;
 using SmartQuant;
@@ -272,7 +272,7 @@ namespace OpenQuant
 }
 ```
 
-![](/icons/icon_labtubeOrg.ico)运行策略后，应该通过OpenQuant自己的OrderManager及CTP通用交易客户终端查看到报单状况。
+![](../.gitbook/assets/icon_labtubeorg%20%282%29.ico)运行策略后，应该通过OpenQuant自己的OrderManager及CTP通用交易客户终端查看到报单状况。
 
-![](/assets/FlashOrderFilled.png)
+![](../.gitbook/assets/flashorderfilled.png)
 

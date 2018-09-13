@@ -1,46 +1,46 @@
-# 7.4  将交易记录存入MySQL
-
----
+# 7.4 将交易记录存入MySQL
 
 对于一个完善的IT系统，无论是交易系统，还是业务管理系统，我们都会按照层次结构来规划。作为一个交易系统，我们需要将交易日志存入数据，以提供业务监控、问题排查、数据统计分析。
 
 现在我们就将FlashOrder下单的记录全部存入Mysql数据库。
 
-![](/icons/icon_labtubeBlue.ico)大致过程分为五步，第一步建立数据库及日志表；第二步在FlashOrder中引入相关的MySQL动态链接库；第三步编写一个日志存储功能的方法，让主策略代码可以调用日志功能。这个文件我们命名为OmniLog.cs，这个文件我们和主策略代码放在一个工程代码中； 第四步，我们在主策略的下单代码后面，插入调用日志存储的方法；第五步，使用MySQL工具及性能工具进行日志存储的查看和监控。
+![](../.gitbook/assets/icon_labtubeblue%20%289%29.ico)大致过程分为五步，第一步建立数据库及日志表；第二步在FlashOrder中引入相关的MySQL动态链接库；第三步编写一个日志存储功能的方法，让主策略代码可以调用日志功能。这个文件我们命名为OmniLog.cs，这个文件我们和主策略代码放在一个工程代码中； 第四步，我们在主策略的下单代码后面，插入调用日志存储的方法；第五步，使用MySQL工具及性能工具进行日志存储的查看和监控。
 
-* ### 第一步-安装MySQL数据库及建立交易日志表
+* **第一步-安装MySQL数据库及建立交易日志表**
 
 第一步，我们安装好MySQL数据库，并建立交易报单日志表LogOrder表，建表SQL如下：
 
-    CREATE TABLE `logorder` (
-        `id` INT(11) NOT NULL AUTO_INCREMENT,
-        `logdatetime` DATETIME(6) NULL DEFAULT NULL COMMENT 'log记录时间',
-        `StrategyName` VARCHAR(20) NULL DEFAULT NULL COMMENT '策略名字' COLLATE 'utf8mb4_unicode_ci',
-        `OrdId` INT(11) NULL DEFAULT NULL,
-        `OrdDateTime` DATETIME(6) NULL DEFAULT NULL,
-        `Symbol` VARCHAR(10) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
-        `TradeDay` DATE NULL DEFAULT NULL,
-        `Side` VARCHAR(10) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
-        `Type` VARCHAR(10) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
-        `Qty` INT(11) NULL DEFAULT NULL,
-        `Price` FLOAT NULL DEFAULT NULL,
-        `Status` VARCHAR(16) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
-        `note` VARCHAR(50) NULL DEFAULT NULL COMMENT '备注' COLLATE 'utf8mb4_unicode_ci',
-        PRIMARY KEY (`id`)
-    )
-    COMMENT='定单日志表，存储所有交易记录'
-    COLLATE='utf8mb4_unicode_ci'
-    ENGINE=InnoDB
-    AUTO_INCREMENT=72969
-    ;
+```text
+CREATE TABLE `logorder` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `logdatetime` DATETIME(6) NULL DEFAULT NULL COMMENT 'log记录时间',
+    `StrategyName` VARCHAR(20) NULL DEFAULT NULL COMMENT '策略名字' COLLATE 'utf8mb4_unicode_ci',
+    `OrdId` INT(11) NULL DEFAULT NULL,
+    `OrdDateTime` DATETIME(6) NULL DEFAULT NULL,
+    `Symbol` VARCHAR(10) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
+    `TradeDay` DATE NULL DEFAULT NULL,
+    `Side` VARCHAR(10) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
+    `Type` VARCHAR(10) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
+    `Qty` INT(11) NULL DEFAULT NULL,
+    `Price` FLOAT NULL DEFAULT NULL,
+    `Status` VARCHAR(16) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci',
+    `note` VARCHAR(50) NULL DEFAULT NULL COMMENT '备注' COLLATE 'utf8mb4_unicode_ci',
+    PRIMARY KEY (`id`)
+)
+COMMENT='定单日志表，存储所有交易记录'
+COLLATE='utf8mb4_unicode_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=72969
+;
+```
 
-* ### 第二步-在策略工程中引入MySQL的DLL库及建立MySQL访问代码
+* **第二步-在策略工程中引入MySQL的DLL库及建立MySQL访问代码**
 
 在FlashOrder解决方案的在MyStrategy工程中，先引入Mysql的.NET驱动库：**MySql.Data.dll** 。这个动态链接库文件你可以在MySQL的安装目录中也可以找到。
 
 再在MyStrategy工程中增加MySQL访问功能的公共方法代码，文件名MysqlMan.cs ，该文件代码如下：
 
-```
+```text
 /*
  *      Purpose:    MySQL DB Access  
  *          
@@ -198,11 +198,11 @@ namespace OpenQuant
 }
 ```
 
-* ### 第三步-编写日志存储功能OmniLog.cs
+* **第三步-编写日志存储功能OmniLog.cs**
 
 在FlashOrder解决方案的MyStrategy工程中，增加日志存储功能OmniLog.cs文件，该文件负责提供报单日志存储方法，以便策略中可以方便地调用，保存报单日志，OmniLog.cs的代码如下：
 
-```
+```text
 /*
  *      Purpose:    OmniLog   
  *      
@@ -259,17 +259,17 @@ namespace OpenQuant
 }
 ```
 
-* ### 第四步-在主策略逻辑中增加日志存储代码
+* **第四步-在主策略逻辑中增加日志存储代码**
 
 现在我们可以在主策略逻辑中保存报单日志了，报单日志保存的调用方法是：
 
-```
+```text
 OmniLog.logOrder(StrategyName,OrdId, DateTime.Now,OrdDateTime,Symbol,Side,Type,Qty,Price,Status,Note)
 ```
 
 FlashOrder的主策略代码改为：
 
-```
+```text
 using System;
 using System.Drawing;
 using SmartQuant;
@@ -446,15 +446,15 @@ namespace OpenQuant
 }
 ```
 
-* ### 第五步-使用MySQL工具进行查看及监控
+* **第五步-使用MySQL工具进行查看及监控**
 
-![](/icons/icon_labtubeOrg.ico)这时运行策略FlashOrder,当有报单时，OmniLog会将所有报单记录存入数据库的表LogOrder
+![](../.gitbook/assets/icon_labtubeorg%20%283%29.ico)这时运行策略FlashOrder,当有报单时，OmniLog会将所有报单记录存入数据库的表LogOrder
 
 在MySQL中记录定单日志如下：
 
-![](/assets/Table_logorder.png)
+![](../.gitbook/assets/table_logorder.png)
 
 通过Mysql的Workbench工具可以监控数据库的状态，Dashboard工具如下图所示：
 
-![](/assets/MysqlDashboard01.png)我们会发现这样写日志的效率还是有些慢，但对于没有做高频交易（HFT）的情况，这些工具是适用的。
+![](../.gitbook/assets/mysqldashboard01.png)我们会发现这样写日志的效率还是有些慢，但对于没有做高频交易（HFT）的情况，这些工具是适用的。
 

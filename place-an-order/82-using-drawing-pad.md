@@ -1,6 +1,4 @@
-# 8.使用OpenQuant的画图功能
-
----
+# 9. 使用OpenQuant的画图功能
 
 在使用OpenQuant系统时， 我们通常要吧行情数据、指标数据、交易执行信息等在图中展示出来。OpenQuant系统菜单中打开view-chart, 或者view-chart\(gapless\)就可以看到OpenQuant的绘图板。Chart（gapless）是不考虑无数据时间的情况，例如盘后时间，或盘中休息、暂停交易等情况，绘制的是全连续的行情数据图形。
 
@@ -10,7 +8,7 @@
 
 在场景文件中，先定义行情数据的K线属性，什么合约、什么周期，什么K线类型等等， OpenQuant不仅支持价格K线，同时也支持交易量K线，涨跌幅K线，Tick型K线等等其他类型。我们以时间型K线为例，场景scenario.cs代码为：
 
-```
+```text
 using System;
 
 using SmartQuant;
@@ -64,7 +62,7 @@ namespace OpenQuant
 
 然后在主策略文件中的定义画布的参数和绘制，MyStrategy.cs的代码片段如下：
 
-```
+```text
     ... ... 
     public class MyStrategy : InstrumentStrategy
     {
@@ -137,7 +135,7 @@ namespace OpenQuant
 
 在OnBar事件发生时，我们绘制K线和三条不同周期的均线 ,代码片段如下：
 
-```
+```text
     protected override void OnBar(Instrument instrument, Bar bar)
     {
 
@@ -180,9 +178,9 @@ namespace OpenQuant
 
 这样我们绘制的图像如下：
 
-![](/assets/UsingDrawingPad01.png)
+![](../.gitbook/assets/usingdrawingpad01.png)
 
 上述完整LinesCrossover代码可以从如下地址获得：
 
-![](/icons/icon_book.png) [https://github.com/omnistep/](https://github.com/omnistep/OpenQuantHelloWorld)LinesCrossover 获得。
+![](../.gitbook/assets/icon_book%20%281%29.png) [https://github.com/omnistep/](https://github.com/omnistep/OpenQuantHelloWorld)LinesCrossover 获得。
 
