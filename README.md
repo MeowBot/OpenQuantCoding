@@ -1,23 +1,9 @@
-# 序言Introduction
+# 序言 Introduction
 
 My notebook for building an OpenQuant Trading System step by step.
 
 ver. 0160 2017/10/23  
-ver. 0171 2018/08/31
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ver. 0171 2018/08/31  
 
 
 
