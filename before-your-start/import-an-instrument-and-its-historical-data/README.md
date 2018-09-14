@@ -4,7 +4,7 @@ OpenQuant是由美国SmartQuant公司研发，面向专业金融机构的量化�
 
 OpenQuant一直在发展中，形成了OpenQuant的产品家族：
 
-![](/images/openquantframework.jpg)
+![](/.gitbook/assets/openquantframework.jpg)
 
 所有的产品都是基于底层的复杂事件处理系统，基于此框架各类复杂的任务可以在整体上进行无缝的集成。开发者可以利用丰富的程序接口编写各种策略，执行交易任务，数据管理及模型的优化。我们这里讨论的就是基于SmartQuant基础框架的主产品OpenQuant，在该产品中具备策略开发、模拟、优化、实盘交易全部功能，同时支持第三方库和插件。
 
