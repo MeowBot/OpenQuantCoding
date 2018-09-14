@@ -8,13 +8,11 @@ OpenQuant一直在发展中，形成了OpenQuant的产品家族：
 
 所有的产品都是基于底层的复杂事件处理系统，基于此框架各类复杂的任务可以在整体上进行无缝的集成。开发者可以利用丰富的程序接口编写各种策略，执行交易任务，数据管理及模型的优化。我们这里讨论的就是基于SmartQuant基础框架的主产品OpenQuant，在该产品中具备策略开发、模拟、优化、实盘交易全部功能，同时支持第三方库和插件。
 
-OpenQuant并不是开源软件，也不是免费软件， Open是指软件构架上是开放自由的。"Freedom is not free"
+OpenQuant并不是开源软件，也不是免费软件， "Open"是指软件构架上的是开放自由。"Freedom is Not Free"
 
-**商业版OpenQuant**--指SmartQuant公司推出的标准版商业软件，该软件资料及报价可以通过www.smartquant.com或者www.smartquant.cn中文网站获得详细资料。
+**商业版OpenQuant**---指SmartQuant公司推出的标准版商业软件，该软件资料及报价可以通过www.smartquant.com或者www.smartquant.cn中文网站获得详细资料。
 
-**天风版OpenQuant**--是指天风证券、天风期货与SmartQuant合作推出的面向国内证券、期货交易，集成了证券、期货、期权交易及历史数据插件的增强版本，天风版保留所有商业版的功能，同时大大简化了交易通道插件安装、配置工作。后面我们主要以天风版OpenQuant来说明其各项功能，天风版OpenQuant的详细信息可以通过www.thanf.com获得资料与帮助。
-
-
+**天风版OpenQuant**---是指天风证券、天风期货与SmartQuant合作推出的面向国内证券、期货交易，集成了证券、期货、期权交易及历史数据插件的增强版本，天风版保留所有商业版的功能，同时大大简化了交易通道插件安装、配置工作。后面我们主要以天风版OpenQuant来说明其各项功能，天风版OpenQuant的详细信息可以通过www.thanf.com获得资料与帮助。
 
 ![](/.gitbook/assets/icon_paw.png)推荐采用面向国内用户的OpenQuant天风版软件。
 
