@@ -9,7 +9,7 @@
   * [1.5 配置插件并接入市场](before-your-start/1.5-config-plugins.md)
   * [1.6 导入合约信息](before-your-start/1.6-import-instruments.md)
   * [1.7 导入历史数据](before-your-start/1.7-import-historical.md)
-  * [1.8 运行一个OpenQuant的示例策略](before-your-start/18-run-a-demo-strategy.md)
+  * [1.8 运行一个OpenQuant的示例策略](before-your-start/1.8-run-a-demo-strategy.md)
 * [2. 管理未来所有的代码...](manage-your-coding-by-svn.md)
 * [3. OpenQuant策略代码的结构](structure-of-openquant-solution.md)
 * [4. 策略运行的事件驱动和定时驱动机制](4.-ce-lve-yun-hang-de-shi-jian-qu-dong-he-ding-shi-qu-dong-ji-zhi/README.md)
