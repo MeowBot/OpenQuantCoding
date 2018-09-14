@@ -2,9 +2,9 @@
 
 * [序言Introduction](README.md)
 * [1. 在开始之前的准备](before-your-start/README.md)
-  * [1.1 操作系统的选择](before-your-start/1.1-chose-a-stable-os.md)
-  * [1.2 OpenQuant商业版与国内天风版](before-your-start/1.2-openquant-product-family.md)
-  * [1.3 安装OpenQuant软件及插件](before-your-start/1.3-download-and-install-openquant.md)
+  * [1.1 操作系统的选择](before-your-start/1.1-cao-zuo-xi-tong-de-xuan-ze.md)
+  * [1.2 OpenQuant商业版与国内天风版](before-your-start/import-an-instrument-and-its-historical-data/README.md)
+  * [1.3 安装OpenQuant软件及插件](before-your-start/1.2-xia-zai-openquant-ji-cha-jian.md)
   * [1.4 配置插件接入市场](before-your-start/1.4-pei-zhi-cha-jian-jie-ru-shi-chang.md)
   * [1.5 OpenQuant天风版软件安装配置快速指南](before-your-start/import-an-instrument-and-its-historical-data/shi-yong-thanfdata-cha-jian.md)
   * [1.6 导入合约信息](before-your-start/import-an-instrument-and-its-historical-data/dao-ru-he-yue-xin-xi.md)
