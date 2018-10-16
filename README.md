@@ -1,27 +1,14 @@
-# 序言 Introduction
-
-My notebook for building an OpenQuant Trading System step by step.![](/assets/StepbyStepGuide.png)
-
-
-
-
+# ![](/assets/StepbyStepGuide.png)序言 Introduction
 
 ver. 0160 2017/10/23  
-ver. 0171 2018/08/31
-
-ver.0256 2018/10/16 
-
+ver. 0171 2018/08/31  
+ver. 0256 2018/10/16
 
 
 
 
 
-
-
-
-
-
-
+My notebook for building an OpenQuant Trading System step by step.
 
 * 图标说明
 
