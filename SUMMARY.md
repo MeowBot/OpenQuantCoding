@@ -10,7 +10,7 @@
   * [1.6 导入合约信息](1_before-your-start/1.6-import-instruments.md)
   * [1.7 导入历史数据](1_before-your-start/1.7-import-historical.md)
   * [1.8 运行一个OpenQuant的示例策略](1_before-your-start/1.8-run-a-demo-strategy.md)
-* [2. 管理未来所有的代码...](2_manage-your-work)
+* [2. 管理未来所有的代码...](2_manage_your_work/manage-your-coding-by-svn.md)
 * [3. OpenQuant策略代码的结构](structure-of-openquant-solution.md)
 * [5. 设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
 * [6. 开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
