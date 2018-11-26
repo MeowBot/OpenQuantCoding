@@ -18,7 +18,7 @@
   * [4.3 编写回测场景模块-Backtest](4_hello_world/43-code-the-baketest-scenario.md)
   * [4.4 编写核心策略模块myStrategy](4_hello_world/44-code-mystrategy-for-helloworld.md)
   * [4.5 编写实盘场景模块-Realtime](4_hello_world/45-code-the-realtime-scenario.md)
-  * [4.2 编写HelloWorld的回测场景模块](4_hello_world/code-an-openquant-helloworld.md)
+  * [4.6 运行HelloWorld](4_hello_world/46-let-us-run-helloworld.md)
 * [5. 设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
 * [6. 开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
 * [7. 发出交易指令](place-an-order/README.md)
