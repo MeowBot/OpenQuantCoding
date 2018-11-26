@@ -4,9 +4,9 @@ ver. 0160 2017/10/23
 ver. 0171 2018/08/31  
 ver. 0256 2018/10/16
 
-My notebook for building an OpenQuant Trading System step by step.
+### A Step by Step Guide to OpenQuant... 
 
-* 图标说明
+* ##### 图标说明
 
 | 图标 | 代表含义 |
 | :---: | :--- |
