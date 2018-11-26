@@ -2,7 +2,7 @@
 
 我们在这个核心逻辑中，当行情数据产生了K线中新的Bar时，我们在信息输出窗口中向外输出期待已久的HelloWorld，同时显示合约名字和当前行情形成K的Bar的平均价格。
 
-![](.gitbook/assets/icon_labtubeblue %288%29.ico)在**MyStrategy**工程中的**MyStrategy.cs**文件中，编写代码如下
+![](/icons/icon_labtubeBlue.ico)在**MyStrategy**工程中的**MyStrategy.cs**文件中，编写代码如下
 
 ```text
 using System;
@@ -39,7 +39,7 @@ namespace OpenQuant
 }
 ```
 
-![](.gitbook/assets/icon_paw %281%29.png)这时你有了一个可以回测合约的历史数据，基础框架，运行结果如下：
+![](/icons/icon_labtubeOrg.ico)这时你有了一个可以回测合约的历史数据，基础框架，运行结果如下：
 
-![](.gitbook/assets/openquanthelloworldrunning.png)
+![](/assets/openquanthelloworldrunning.png)
 
