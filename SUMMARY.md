@@ -13,7 +13,7 @@
 * [2. 管理未来所有的代码...](2_manage_your_work/manage-your-coding-by-svn.md)
 * [3. 了解OpenQuant策略代码的结构](3_structure_of_openquant_solution/README.md)
 * [4. Hello World](4_hello_world/README.md)
-  * [4.1 设计HelloWorld的构架](4_hello_world/design-an-openquant-helloworld.md)
+  * [4.1 设计HelloWorld的构架](4_hello_world/41-design-an-openquant-helloworld.md)
   * [4.2 新创建解决方案](4_hello_world/42-new-a-solution.md)
   * [4.3 编写回测场景模块-Backtest](4_hello_world/43-code-the-baketest-scenario.md)
   * [4.4 编写核心策略模块myStrategy](4_hello_world/44-code-mystrategy-for-helloworld.md)

@@ -39,7 +39,5 @@ namespace OpenQuant
 }
 ```
 
-![](/icons/icon_labtubeOrg.ico)这时你有了一个可以回测合约的历史数据，基础框架，运行结果如下：
 
-![](/assets/openquanthelloworldrunning.png)
 
