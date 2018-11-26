@@ -1,4 +1,10 @@
-### A Step by Step Guide to OpenQuant...![](/assets/StepbyStepGuide.png)序言 Introduction
+# A Step by Step Guide to OpenQuant...
+
+# ![](/assets/StepbyStepGuide.png)
+
+# 
+
+# 序言 Introduction
 
 ver. 0160 2017/10/23  
 ver. 0171 2018/08/31  
