@@ -25,5 +25,4 @@
   * [9. 使用OpenQuant的画图功能](place-an-order/82-using-drawing-pad.md)
 * [10.一个基础的策略](8_a-basic-strategy/README.md)
   * [10.1 三均线穿越系统](8_a-basic-strategy/81-linescrossover-strategy.md)
-* [4. 策略运行的事件驱动和定时驱动机制](4.-ce-lve-yun-hang-de-shi-jian-qu-dong-he-ding-shi-qu-dong-ji-zhi/README.md)
 
