@@ -19,8 +19,6 @@
   * [4.4 编写核心策略模块myStrategy](4_hello_world/44-code-mystrategy-for-helloworld.md)
   * [4.5 编写实盘场景模块-Realtime](4_hello_world/45-code-the-realtime-scenario.md)
   * [4.6 运行HelloWorld](4_hello_world/46-let-us-run-helloworld.md)
-* [5. 设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
-* [6. 开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
 * [7. 发出交易指令](place-an-order/README.md)
   * [7.1 建立一个发出交易指令的策略FlashOrder](place-an-order/7.1-jian-li-yi-ge-fa-chu-jiao-yi-zhi-ling-de-ce-lve-flashorder.md)
   * [7.2 FlashOrder的策略逻辑](place-an-order/7.2-flashorder-de-ce-lve-luo-ji.md)
