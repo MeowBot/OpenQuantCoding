@@ -1,6 +1,8 @@
 # 3. OpenQuant策略代码的结构
 
-## OpenQuant策略示例中的代码结构分析
+## 3.1 了解OpenQuant策略示例中的代码结构
+
+OpenQuant软件附带的策略示例为我们展示了典型的策略代码，我们可以通过这些示例了解OpenQuant策略编程中代码应该具备的基础结构。
 
 ![](/icons/icon_labtubeBlue.ico)打开OpenQuant中的SMACrossover示例策略，这是一个经典的SMA交叉策略，打开后可以直接运行看到回测结果。这里我们着重看一下这个例子的代码结构和调用关系。
 
