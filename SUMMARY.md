@@ -13,6 +13,8 @@
 * [2. 管理未来所有的代码...](2_manage_your_work/manage-your-coding-by-svn.md)
 * [3. 了解OpenQuant策略代码的结构](3_structure_of_openquant_solution/README.md)
 * [4. Hello World](4_hello_world/README.md)
+  * [4.1 设计HelloWorld的构架](4_hello_world/design-an-openquant-helloworld.md)
+  * [4.2 编写HelloWorld的回测场景模块](4_hello_world/design-an-openquant-helloworld.md)
 * [5. 设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
 * [6. 开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
 * [7. 发出交易指令](place-an-order/README.md)
