@@ -4,19 +4,15 @@
 
 在做任何开发工作前，都应该进行设计工作，即便是一个简单的功能。是的，一个OpenQuant的HelloWorld 也需要设计一下，这个HelloWorld程序就是最基础的OpenQuant策略代码。虽然简单，但具备最核心的结构，未来可以扩展出我们需要的更多的解决方案。
 
-
-
 ## 我的需求
 
 建立一个OpenQuant的代码基础构架——HelloWorld策略，该策略要提供历史数据回测结构，要可以实盘连接到CTP交易柜台，可以订阅一个全市场最热的合约，当收到每一笔Tick行情时，在输出窗口写一句HelloWorld及所订阅合约的当前报价！
-
-
 
 ## 设计草稿
 
 总体代码结构应该是这样的：
 
-![](/assets/design_helloworld.jpg)
+![](/assets/design_helloworld.png)
 
 整个解决方案由三个工程组成：
 
