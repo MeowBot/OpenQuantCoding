@@ -12,6 +12,7 @@
   * [1.8 运行一个OpenQuant的示例策略](1_before-your-start/1.8-run-a-demo-strategy.md)
 * [2. 管理未来所有的代码...](2_manage_your_work/manage-your-coding-by-svn.md)
 * [3. OpenQuant策略代码的结构](3_structure_of_openquant_solution/README.md)
+* [4. Hello World](4_hello_world/README.md)
 * [5. 设计一个OpenQuant的HelloWorld！](design-an-openquant-helloworld.md)
 * [6. 开始编写OpenQuant的HelloWorld！](code-an-openquant-helloworld.md)
 * [7. 发出交易指令](place-an-order/README.md)
@@ -24,6 +25,5 @@
   * [9. 使用OpenQuant的画图功能](place-an-order/82-using-drawing-pad.md)
 * [10.一个基础的策略](8_a-basic-strategy/README.md)
   * [10.1 三均线穿越系统](8_a-basic-strategy/81-linescrossover-strategy.md)
-* [4. 策略运行的事件驱动和定时驱动机制](4.-ce-lve-yun-hang-de-shi-jian-qu-dong-he-ding-shi-qu-dong-ji-zhi/README.md)
 * [4. 策略运行的事件驱动和定时驱动机制](4.-ce-lve-yun-hang-de-shi-jian-qu-dong-he-ding-shi-qu-dong-ji-zhi/README.md)
 
