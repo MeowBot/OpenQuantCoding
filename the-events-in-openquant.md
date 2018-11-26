@@ -1,4 +1,6 @@
-# 附件：OpenQuant的常用事件
+# .策略运行的事件驱动和定时驱动机制
+
+# OpenQuant的常用事件
 
 在OpenQuant接入金融交易市场收到订阅合约的行情数据及策略运行时常见的事件有：
 
@@ -231,4 +233,6 @@ protected override void OnStopExecuted(Stop stop)
             }
 }
 ```
+
+
 
