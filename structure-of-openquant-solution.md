@@ -8,7 +8,7 @@ OpenQuant软件附带的策略示例为我们展示了典型的策略代码，�
 
 ![](.gitbook/assets/smacrossoversolutionexplorer.png)
 
-这个解决方案中，有如下四个工程：
+在这个解决方案（Solution）中，有如下四个工程：
 
 **Backtest** ：回测，定义回测时的场景，引入的数据，回测的起始及结束日期，构造K线生成要素  
 **MyStrategy** ：策略逻辑主体，定义均线，绘制K线及均线的主要图表，处理交易逻辑，处理成交事件，处理持仓等等  
@@ -19,5 +19,9 @@ OpenQuant软件附带的策略示例为我们展示了典型的策略代码，�
 
 ![](.gitbook/assets/smacrossovercodemap.png)
 
-图：OpenQuant策略示例SMACrossover的代码结构
+图：OpenQuant策略示例SMACrossover的代码结构。
+
+
+
+熟悉C\#语言开发的用户，很快就发现这个OpenQuant的策略代码就是一个完全标准的C\#语言的解决方案。我们可以用微软的VisualStudio开发环境加载策略、编译并调试。
 
