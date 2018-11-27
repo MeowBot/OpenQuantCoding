@@ -1,10 +1,10 @@
 ## 4.3 编写回测场景Backtest
 
-![](/icons/icon_labtubeBlue.ico)在回测场景工程（Backtest）中，将场景类的名字从MyScenario改为Backtest，以便能和Realtime场景类更为明确地加以区别。修改这个类名会涉及MyScenarios.cs，MySenario.Designer.cs，Program.cs 这3个文件中所有该类定义及调用的代码。如果用微软的Visual Studio工具将非常的自动化完成这类代码编写工作。
+![](/icons/icon_labtubeBlue.ico)
 
 在这个场景模块中，我们增加回测场景的定义，包括测试的合约，我们引入螺纹钢期货rb1709合约，我们假设你已经在OpenQuant中引入了rb1709合约，同时使用历史数据插件导入了2017年1月1日至2017年3月1日的Tick级别的历史数据。
 
-在**Backtest**工程的**MyScenario.cs**文件中，编写代码如下
+在**Backtest**工程的**MyScenario.cs**文件中，编写的代码如下，
 
 ```text
 using System;
@@ -52,9 +52,11 @@ namespace OpenQuant
 }
 ```
 
-上面的代码public partial class **Backtest**:Scenario 修改了原来OpenQuant自动生成的public partial class **MyScenario**:Scenario , 为此我们也要修改这个工程中的MyScenario.Designer.cs中这个“类”的名字， 把自动生成的public partial class MyScenario改为public partial class Backtest
+在回测场景工程（Backtest）中，我们将场景类的名字从MyScenario改为Backtest，以便能和即将增加的Realtime场景类更为明确地加以区别。修改这个类名会涉及MyScenarios.cs，MySenario.Designer.cs，Program.cs 这3个文件中所有该类定义及调用的代码。如果用微软的Visual Studio工具将非常的自动化完成这类代码编写工作。
 
-在Backtest工程中的**MyScenario.Designer.cs**文件中，编写代码如下
+上面的代码public partial class **Backtest**:Scenario 修改了原来OpenQuant自动生成的public partial class **MyScenario**:Scenario 。
+
+ 为此我们也要修改这个工程的MyScenario.Designer.cs文件中这个“类”的名字， 把public partial class MyScenario改为public partial class Backtest，在Backtest工程中的**MyScenario.Designer.cs**文件中，编写代码如下
 
 ```text
 using System;
