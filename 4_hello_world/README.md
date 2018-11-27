@@ -1,6 +1,6 @@
 # 4.构建一个OpenQuant的HelloWorld策略
 
-在对OpenQuant的代码结构和驱动机制有了大致的了解后，让我们来开始构建一个OpenQuant的HelloWorld系统吧...
+在对OpenQuant的代码结构有了大致的了解后，让我们来开始构建一个OpenQuant的HelloWorld系统吧...
 
 ## Hello World的需求描述
 
