@@ -16,7 +16,7 @@
 
 接入实时到动态行情数据，我们要定义实盘接入场景，在Realtime工程中的**Scenario.cs**文件中，编写代码如下：
 
-```text
+```c\#
 using System;
 using System.Collections.Generic;
 using System.Linq;
