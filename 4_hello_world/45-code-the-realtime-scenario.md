@@ -6,8 +6,6 @@
 
 ![](/icons/icon_labtubeOrg.ico)现在我们按照设计，这个解决方案（Solution）中已经有了三个工程：一个回测场景，一个实盘场景，一个策略主体; 让我们来在这三个工程中加入代码。
 
-
-
 ## **引入MyStrategy工程类**
 
 在接入实盘收行情时，我们会将解决方案中的Realtime作为启动工程，在这个工程中将实例化一个主逻辑MyStrategy类，**为此，我们先要在Realtime工程中，引入MyStrategy工程类。**正如OpenQuant生成的Backtest中已经引入了Mystrategy工程类一样。
@@ -67,5 +65,7 @@ namespace OpenQuant
 }
 ```
 
-这里HelloWolrd解决方案的Realtime工程中的Scenario.Designer.cs及Program.cs均不需要改动代码。
+上面代码中，对交易通道的定义，需要注意交易通道名字需要和安装的通道插件名字一致。
+
+HelloWolrd解决方案的Realtime工程中的Scenario.Designer.cs及Program.cs均不需要改动代码。这样就完成了Realtime工程代码的编写。
 
